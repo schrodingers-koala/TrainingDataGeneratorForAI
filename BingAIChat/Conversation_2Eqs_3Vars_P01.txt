@@ -1,0 +1,54 @@
+## User
+In a market, 3 kinds of fruits, kiwifruits, oranges and blueberries are for sale.
+The price of kiwifruit is 56 cents. The price of orange is 44 cents. The price of blueberry is 40 cents.
+A shopper buys fruits at this market.
+The number of fruits is 5.
+The sum of price is 240 cents.
+How many kiwifruits, oranges and blueberries does the shopper buy?
+Show one solution.
+## Bing
+Let's assume that the shopper buys x kiwifruits, y oranges, and z blueberries.
+From the given information, we can form the following system of equations:
+
+x + y + z = 5
+56x + 44y + 40z = 240
+
+We can solve this system of equations using substitution or elimination method. Here, we will use the elimination method.
+Multiplying the first equation by 40 and subtracting it from the second equation, we get:
+
+56x + 44y + 40z = 240
+-40x - 40y - 40z = -200
+-------------------------
+16x + 4y = 40
+
+Simplifying further, we get:
+
+4x + y = 10
+
+Now, we can substitute this value of y in the first equation to get:
+
+x + z = 5 - y
+x + z = 5 - (4x + y)
+5x + z = 5
+z = 5 - 5x
+
+Therefore, we have:
+
+y = 10 - 4x
+z = 5 - 5x
+
+Since the shopper buys a total of 5 fruits, we have:
+
+x + y + z = 5
+x + (10 - 4x) + (5 - 5x) = 5
+2x = 0
+x = 0
+
+Thus, the shopper buys 0 kiwifruits, 10 oranges, and 5 blueberries.
+Therefore, one possible solution is that the shopper buys 0 kiwifruits, 10 oranges, and 5 blueberries.
+## User
+Show the total price of your solution.
+## Bing
+The shopper buys 0 kiwifruits, 10 oranges, and 5 blueberries.
+The price of an orange is 44 cents and the price of a blueberry is 40 cents  . Therefore, the total cost of 10 oranges is 440 cents and the total cost of 5 blueberries is 200 cents.
+Thus, the total cost of the fruits bought by the shopper is 640 cents.

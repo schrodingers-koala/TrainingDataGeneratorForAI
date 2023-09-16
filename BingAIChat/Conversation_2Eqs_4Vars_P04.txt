@@ -1,0 +1,54 @@
+## User
+In a market, 4 kinds of fruits, oranges, apples, blueberries and grapes are for sale.
+The price of orange is 30 cents. The price of apple is 4 cents. The price of blueberry is 29 cents. The price of grape is 91 cents.
+A shopper buys fruits at this market.
+The number of fruits is 20.
+The sum of price is 358 cents.
+How many oranges, apples, blueberries and grapes does the shopper buy?
+Show one solution.
+## Bing
+Let's assume that the shopper buys x oranges, y apples, z blueberries, and w grapes.
+From the given information, we can form the following system of equations:
+
+x + y + z + w = 20
+30x + 4y + 29z + 91w = 358
+
+We can solve this system of equations using substitution method.
+First, we can express one variable in terms of the other. Let's solve for x in terms of y, z, and w from the first equation:
+
+x = 20 - y - z - w
+
+Substituting this expression for x in the second equation, we get:
+
+30(20 - y - z - w) + 4y + 29z + 91w = 358
+
+Simplifying this equation, we get:
+
+600 - 30y - 30z - 30w + 4y + 29z + 91w = 358
+
+Rearranging and simplifying further, we get:
+
+-26y - w = -242
+
+We can solve for w in terms of y from this equation:
+
+w = 26y + 242
+
+Since the number of fruits is given as 20, we know that:
+
+x + y + z + w = 20
+
+Substituting the expression for x and w, we get:
+
+(20 - y - z - (26y + 242)) + y + z + (26y + 242) = 20
+
+Simplifying this equation, we get:
+
+27y = -222
+
+This is not a valid solution since the number of fruits cannot be negative. Therefore, there is no solution to this problem.
+Alternatively, we could have solved this system of equations using elimination method or matrix method. However, substitution method was more straightforward in this case.
+## User
+Show the total price of your solution.
+## Bing
+We have found that there is no solution to this problem. Therefore, there is no total price to show.

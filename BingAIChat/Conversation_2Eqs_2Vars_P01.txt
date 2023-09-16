@@ -1,0 +1,28 @@
+## User
+In a market, 2 kinds of fruits, kiwifruits and grapes are for sale.
+The price of kiwifruit is 34 cents. The price of grape is 36 cents.
+A shopper buys fruits at this market.
+The number of fruits is 4.
+The sum of price is 144 cents.
+How many kiwifruits and grapes does the shopper buy?
+Show one solution.
+## Bing
+This is a classic problem in algebra. Let's assume that the shopper bought x kiwifruits and y grapes.
+From the problem statement, we know that:
+- The price of kiwifruit is 34 cents.
+- The price of grape is 36 cents.
+- The number of fruits is 4.
+- The sum of price is 144 cents.
+We can write two equations based on the above information:
+- x + y = 4 (since the total number of fruits bought is 4)
+- 34x + 36y = 144 (since the total cost of fruits bought is 144 cents)
+We can solve this system of equations to find the values of x and y. One way to do this is to use substitution method. We can solve equation (1) for x in terms of y:
+x = 4 - y
+Substitute this value of x in equation (2):
+34(4 - y) + 36y = 144
+Simplifying this equation, we get:
+-2y + 136 = 144
+-2y = 8
+y = -4
+This solution doesn't make sense because we can't have negative number of grapes. Therefore, there is no solution to this problem.
+I hope this helps!

@@ -1,0 +1,109 @@
+## User
+In a market, 3 kinds of fruits, blueberries, grapes and melons are for sale.
+The price of blueberry is 95 cents. The price of grape is 28 cents. The price of melon is 79 cents.
+The weight of blueberry is 48 g. The weight of grape is 45 g. The weight of melon is 29 g.
+A shopper buys fruits at this market.
+The number of fruits is 3.
+The sum of price is 84 cents.
+The sum of weight is 135 g.
+How many blueberries, grapes and melons does the shopper buy?
+Show one solution.
+## Bing
+Let's assume that the shopper buys x blueberries, y grapes, and z melons.
+From the given information, we can form the following system of equations:
+
+0.95x + 0.28y + 0.79z = 0.84
+48x + 45y + 29z = 135
+x + y + z = 3
+
+We can solve this system of equations to get the values of x, y, and z.
+Subtracting the third equation from the first equation, we get:
+
+0.95x + 0.28y + 0.79z - x - y - z = 0.84 - 3
+=> 0.95x - x + 0.28y - y + 0.79z - z = -2.16
+=> 0.95(x - y - z) + 0.28(y - x - z) + 0.79(z - x - y) = -2.16
+=> 0.05(x - y - z) - 0.51(x - y - z) + 0.21(z - x - y) = -2.16
+=> -0.46(x - y - z) + 0.21(z - x - y) = -2.16
+=> 23(x-y-z) - 10(z-x-y) = 408
+=> (23-10)x + (-23+21)y + (-23-10)z = 408
+=> 13x-2y-33z=408
+
+Multiplying the third equation by 29 and subtracting it from the second equation, we get:
+
+48x + 45y + 29z - (29x + 29y + 29z) = 135 - (3 * 29)
+=> 19x + 16y = 24
+
+Solving these two equations simultaneously, we get:
+
+13x-2y-33z=408    ...(1)
+19x+16y=24        ...(2)
+
+Multiplying (2) by `13` and subtracting it from (1), we get:
+
+-210y-400z=312
+
+Dividing by `-10`, we get:
+
+21y+40z=-31.2
+
+Since **y** and **z** are integers, we can try different values of **y** and **z** that satisfy this equation.
+
+Let's try **y=1** and **z=0**.
+
+Substituting these values in equation (2), we get:
+
+19x+16(1)=24
+=> x=8/19
+
+This is not an integer value for **x**, so let's try another combination.
+
+Let's try **y=0** and **z=1**.
+
+Substituting these values in equation (2), we get:
+
+19x+16(0)=24
+=> x=24/19
+
+This is also not an integer value for **x**, so let's try another combination.
+
+Let's try **y=2** and **z=1**.
+
+Substituting these values in equation (2), we get:
+
+19x+16(2)=24
+=> x=-8/19
+
+This is not a valid solution since the number of fruits cannot be negative.
+
+Let's try one more combination.
+
+Let's try **y=1** and **z=1**.
+
+Substituting these values in equation (2), we get:
+
+19x+16(1)=24
+=> x=8/19
+
+This is a valid solution since all variables are positive integers.
+
+Therefore, the shopper buys `8` blueberries, `1` grape, and `1` melon.
+
+
+## User
+
+Show the total price of your solution.
+
+
+## Bing
+
+According to the solution we found earlier, the shopper buys `8` blueberries, `1` grape, and `1` melon. The total price of this purchase can be calculated as follows:
+
+
+Total price = (Price of 8 blueberries) + (Price of 1 grape) + (Price of 1 melon)
+= (8 * 0.95) + (1 * 0.28) + (1 * 0.79)
+= 7.6 + 0.28 + 0.79
+= 8.67 cents
+
+
+Therefore, the total price of the shopper's purchase is **8.67 cents**.
+

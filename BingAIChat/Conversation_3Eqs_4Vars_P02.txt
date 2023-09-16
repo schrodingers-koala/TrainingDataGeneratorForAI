@@ -1,0 +1,76 @@
+## User
+In a market, 4 kinds of fruits, oranges, grapes, apples and melons are for sale.
+The price of orange is 73 cents. The price of grape is 88 cents. The price of apple is 85 cents. The price of melon is 71 cents.
+The weight of orange is 32 g. The weight of grape is 21 g. The weight of apple is 49 g. The weight of melon is 2 g.
+A shopper buys fruits at this market.
+The number of fruits is 13.
+The sum of price is 1078 cents.
+The sum of weight is 373 g.
+How many oranges, grapes, apples and melons does the shopper buy?
+Show one solution.
+## Bing
+Let's assume that the shopper buys x oranges, y grapes, z apples, and w melons. We can then write the following system of equations:
+
+x + y + z + w = 13
+0.73x + 0.88y + 0.85z + 0.71w = 10.78
+32x + 21y + 49z + 2w = 373
+
+We can solve this system of equations using matrix algebra or substitution. Here, we will use substitution.
+From the first equation, we can solve for w in terms of x, y, and z:
+
+w = 13 - x - y - z
+
+Substituting this into the second equation, we get:
+
+0.73x + 0.88y + 0.85z + 0.71(13 - x - y - z) = 10.78
+
+Simplifying and solving for z, we get:
+
+0.14z = 1.35
+z = 9.64
+
+Since we need a whole number of apples, let's round z down to 9.
+Substituting this value into the third equation, we get:
+
+32x + 21y + 49(9) + 2w = 373
+32x + 21y + 2w = 132
+
+We can solve for w in terms of x and y:
+
+w = (132 - 32x - 21y) / 2
+
+Since we need a whole number of melons, let's check which values of x and y give us a whole number for w.
+If we try x=1 and y=3, we get:
+
+w = (132 - 32(1) - 21(3)) / 2 = (132 - 32 - 63) / 2 = 17/2
+
+This is not a whole number, so let's try another combination.
+If we try x=2 and y=3, we get:
+
+w = (132 - 32(2) - 21(3)) / 2 = (132 - 64 - 63) / 2 = 5/2
+
+This is also not a whole number, so let's try another combination.
+If we try x=3 and y=3, we get:
+
+w = (132 - 32(3) - 21(3)) / 2 = (132 - 96 - 63) / 2 = -13/2
+
+This is not a valid solution since we can't have a negative number of melons.
+If we try x=4 and y=3, we get:
+
+w = (132 - 32(4) - 21(3)) / 2 = (132 -128 -63) /2 =0.5
+
+This is also not a whole number, so let's try another combination.
+If we try x=1 and y=4, we get:
+
+w = (132 -32(1) -21(4))/2=(132-32-84)/2=8
+
+So the shopper bought:
+- 1 orange for 73 cents.
+- 4 grapes for 88*4=352 cents.
+- 9 apples for 85*9=765 cents.
+- 8 melons for 71*8=568 cents.
+Therefore, the total price is 73+352+765+568=1758 cents or $17.58.
+## User
+Show the total price of your solution.
+## Bing
+The total price of the shopper's purchase is $17.58. The shopper bought 1 orange for 73 cents, 4 grapes for 88*4=352 cents, 9 apples for 85*9=765 cents, and 8 melons for 71*8=568 cents .

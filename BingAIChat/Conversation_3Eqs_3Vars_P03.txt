@@ -1,0 +1,36 @@
+## User
+In a market, 3 kinds of fruits, apples, melons and kiwifruits are for sale.
+The price of apple is 45 cents. The price of melon is 78 cents. The price of kiwifruit is 9 cents.
+The weight of apple is 61 g. The weight of melon is 97 g. The weight of kiwifruit is 72 g.
+A shopper buys fruits at this market.
+The number of fruits is 14.
+The sum of price is 474 cents.
+The sum of weight is 1086 g.
+How many apples, melons and kiwifruits does the shopper buy?
+Show one solution.
+## Bing
+Let's assume that the shopper buys a apples, m melons, and k kiwifruits. We can then write the following system of equations:
+
+a + m + k = 14
+0.45a + 0.78m + 0.09k = 4.74
+61a + 97m + 72k = 1086
+
+We can solve this system of equations using matrix algebra. The solution is:
+
+a = 6
+m = 5
+k = 3
+
+Therefore, the shopper buys 6 apples, 5 melons, and 3 kiwifruits.
+This is one possible solution to the problem.
+## User
+Show the total price of your solution.
+## Bing
+According to the solution I provided earlier, the shopper buys 6 apples, 5 melons, and 3 kiwifruits. The total price of this purchase can be calculated as follows:
+
+Total price = (Price of 1 apple * Number of apples) + (Price of 1 melon * Number of melons) + (Price of 1 kiwifruit * Number of kiwifruits)
+            = (0.45 * 6) + (0.78 * 5) + (0.09 * 3)
+            = 2.70 + 3.90 + 0.27
+            = 7.87 cents
+
+Therefore, the total price of the shopper's purchase is 7.87 cents.

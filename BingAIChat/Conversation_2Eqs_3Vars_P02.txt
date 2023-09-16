@@ -1,0 +1,49 @@
+## User
+In a market, 3 kinds of fruits, strawberries, oranges and apples are for sale.
+The price of strawberry is 94 cents. The price of orange is 32 cents. The price of apple is 91 cents.
+A shopper buys fruits at this market.
+The number of fruits is 11.
+The sum of price is 476 cents.
+How many strawberries, oranges and apples does the shopper buy?
+Show one solution.
+## Bing
+Let's assume that the shopper buys x strawberries, y oranges, and z apples.
+From the given information, we can form the following system of equations:
+
+x + y + z = 11
+94x + 32y + 91z = 476
+
+We can solve this system of equations using substitution or elimination method. Here, we will use the elimination method.
+Multiplying the first equation by 32 and subtracting it from the second equation, we get:
+
+94x + 32y + 91z = 476
+-32x - 32y - 32z = -352
+------------------------
+62x       + 59z = 124
+
+Now, we can use the first equation to express y in terms of x and z:
+
+y = 11 - x - z
+
+Substituting this expression into the above equation, we get:
+
+62x + 59z = 124 - 32(11 - x - z)
+62x + 59z = -292 + 91x + 91z
+31x - 32z = -416
+
+Solving this equation for x, we get:
+
+x = (59/93)z - (416/93)
+
+Since x and y must be non-negative integers, we can try different values of z and check if x and y are integers.
+If we set z to be a multiple of 93 (the denominator of the coefficient of z in the above equation), then x will be an integer. For example, if we set z to be 93, then:
+
+x = (59/93)(93) - (416/93) = 3
+
+Substituting this value of x into the first equation, we get:
+
+3 + y + 93 = 11
+y = -85
+
+This is not a valid solution since y must be non-negative. Therefore, there is no solution that satisfies all the given conditions.
+Thus, there is no combination of strawberries, oranges, and apples that the shopper could have bought to satisfy all the given conditions.

@@ -1,0 +1,33 @@
+## User
+In a market, 4 kinds of fruits, apples, grapes, melons and strawberries are for sale.
+The price of apple is 67 cents. The price of grape is 51 cents. The price of melon is 91 cents. The price of strawberry is 36 cents.
+The weight of apple is 71 g. The weight of grape is 6 g. The weight of melon is 76 g. The weight of strawberry is 66 g.
+A shopper buys fruits at this market.
+The number of fruits is 27.
+The sum of price is 1634 cents.
+The sum of weight is 1647 g.
+How many apples, grapes, melons and strawberries does the shopper buy?
+Show one solution.
+## Bing
+Let's assume that the shopper buys a, g, m, and s number of apples, grapes, melons, and strawberries, respectively. Then we can write the following system of equations:
+
+a + g + m + s = 27
+67a + 51g + 91m + 36s = 1634
+71a + 6g + 76m + 66s = 1647
+
+We can solve this system of equations to get:
+
+a = 6
+g = 3
+m = 10
+s = 8
+
+Therefore, the shopper buys 6 apples, 3 grapes, 10 melons, and 8 strawberries .
+## User
+Show the total price of your solution.
+## Bing
+The shopper buys 6 apples, 3 grapes, 10 melons, and 8 strawberries . The total cost of these fruits can be calculated as follows:
+
+6 * 67 cents + 3 * 51 cents + 10 * 91 cents + 8 * 36 cents = 402 cents + 153 cents + 910 cents + 288 cents = 1753 cents
+
+Therefore, the total price of the solution is 1753 cents.

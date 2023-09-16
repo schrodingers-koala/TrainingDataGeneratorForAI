@@ -1,0 +1,42 @@
+## User
+In a market, 3 kinds of fruits, blueberries, apples and strawberries are for sale.
+The price of blueberry is 4 cents. The price of apple is 60 cents. The price of strawberry is 28 cents.
+A shopper buys fruits at this market.
+The number of fruits is 13.
+The sum of price is 316 cents.
+How many blueberries, apples and strawberries does the shopper buy?
+Show one solution.
+## Bing
+This is a classic problem in algebra. Let's assume that the shopper buys x blueberries, y apples, and z strawberries. We can write the following system of equations:
+
+x + y + z = 13
+0.04x + 0.6y + 0.28z = 3.16
+
+We can solve this system of equations using substitution or elimination method. Here, we will use the substitution method.
+From the first equation, we can write:
+
+x = 13 - y - z
+
+Substituting this value of x in the second equation, we get:
+
+0.04(13 - y - z) + 0.6y + 0.28z = 3.16
+
+Simplifying this equation, we get:
+
+0.52y + 0.24z = 2.84
+
+Multiplying both sides by 100 to get rid of decimals, we get:
+
+52y + 24z = 284
+
+We can now use trial and error to find integer solutions for y and z that satisfy this equation.
+One possible solution is y=4 and z=7, which gives x=2.
+Therefore, the shopper bought 2 blueberries, 4 apples, and 7 strawberries .
+## User
+Show the total price of your solution.
+## Bing
+The shopper bought 2 blueberries, 4 apples, and 7 strawberries . The total cost of this purchase can be calculated by multiplying the price of each fruit by the number of fruits purchased and adding the results. The price of blueberry is 4 cents, the price of apple is 60 cents, and the price of strawberry is 28 cents . Therefore, the total cost of the purchase is:
+
+2 * 0.04 + 4 * 0.6 + 7 * 0.28 = 0.08 + 2.4 + 1.96 = 4.44 cents
+
+Therefore, the total cost of the purchase is 444 cents.

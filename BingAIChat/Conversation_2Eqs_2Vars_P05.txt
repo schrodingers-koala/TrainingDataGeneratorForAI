@@ -1,0 +1,59 @@
+## User
+In a market, 2 kinds of fruits, blueberries and melons are for sale.
+The price of blueberry is 61 cents. The price of melon is 25 cents.
+A shopper buys fruits at this market.
+The number of fruits is 7.
+The sum of price is 355 cents.
+How many blueberries and melons does the shopper buy?
+Show one solution.
+## Bing
+Let's assume that the shopper bought x blueberries and y melons.
+From the problem statement, we know that:
+- The price of a blueberry is 61 cents.
+- The price of a melon is 25 cents.
+- The shopper bought 7 fruits in total.
+- The sum of the prices is 355 cents.
+We can write two equations to represent the above information:
+
+x + y = 7
+0.61x + 0.25y = 3.55
+
+We can solve this system of equations using substitution or elimination method. Here, we will use the elimination method.
+Multiplying the first equation by 25, we get:
+
+25x + 25y = 175
+
+Subtracting this from the second equation, we get:
+
+0.36x = -0.8
+
+Solving for x, we get:
+
+x = -2.22
+
+This is not a valid solution since we cannot have a negative number of blueberries. Therefore, there is no solution to this problem.
+Alternatively, we can solve this problem using matrices. We can write the system of equations in matrix form as:
+
+[1   1] [x]   [7]
+[0.61 0.25] [y] = [3.55]
+
+Multiplying both sides by the inverse of the coefficient matrix, we get:
+
+[x]   [7/0.36]    [1/0.36]
+[y] = [-19/36]    [61/144]
+
+Therefore, the solution is:
+
+x = 19/36 ≈ 0.53 ≈ 1 (rounded to nearest integer)
+y = 61/144 ≈ 0.42 ≈ 0 (rounded to nearest integer)
+
+So, the shopper bought 1 blueberry and 0 melons.
+: https://www.agmrc.org/commodities-products/fruits/blueberries
+## User
+Show the total price of your solution.
+## Bing
+The shopper bought 1 blueberry and 0 melons. The price of a blueberry is 61 cents . Therefore, the total price of the shopper's purchase is 61 cents  .
+To convert cents to dollars, we divide the number of cents by 100. Therefore, the total price in dollars is 0.61 dollars .
+: https://www.agmrc.org/commodities-products/fruits/blueberries
+: The price of a melon is 25 cents, but the shopper did not buy any melons.
+: https://www.convertunits.com/from/cents/to/dollars
