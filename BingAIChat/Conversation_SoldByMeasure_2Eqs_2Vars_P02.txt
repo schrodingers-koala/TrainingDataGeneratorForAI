@@ -1,0 +1,35 @@
+## User
+In a market, 2 kinds of fruits, kiwifruits and strawberries are for sale.
+The weight of one kiwifruit is 93 g. Strawberry is sold by 11 cm3. The weight of strawberry is 29/11 g per cm3.
+The volume of one kiwifruit is 58 cm3.
+A shopper buys fruits at this market.
+The sum of weight is 610 g.
+The sum of volume is 345 cm3.
+How much kiwifruit and strawberry does the shopper buy?
+Show one solution.
+## Copilot
+Let's denote the number of kiwifruits as (x) and the number of strawberries as (y). We can set up the following system of equations based on the given information:
+- Weight equation:
+[93x + \frac{29}{11}y = 610]
+- Volume equation:
+[58x + 11y = 345]
+To solve this system, we can multiply the second equation by 11 to make the coefficients of (y) match:
+[11(58x) + 11(11y) = 11(345)]
+[638x + 121y = 3795]
+Now we can solve the system of equations. Let's multiply the first equation by 121 and subtract it from the second equation:
+[638x + 121y - (93x + \frac{29}{11}y) = 3795 - 610]
+[545x + \frac{121}{11}y = 3185]
+To get rid of the fraction, multiply both sides of the equation by 11:
+[11(545x) + 121y = 11(3185)]
+[5995x + 121y = 35035]
+Now subtract the first equation from this new equation:
+[5995x + 121y - (638x + 121y) = 35035 - 3795]
+[5357x = 31240]
+[x = \frac{31240}{5357} \approx 5.84]
+Since the number of fruits must be a whole number, let's round down to 5 kiwifruits. Now we can find the number of strawberries:
+[58x + 11y = 345]
+[58(5) + 11y = 345]
+[11y = 345 - 290]
+[11y = 55]
+[y = 5]
+Therefore, the shopper buys approximately 5 kiwifruits and 5 strawberries. 🥝🍓

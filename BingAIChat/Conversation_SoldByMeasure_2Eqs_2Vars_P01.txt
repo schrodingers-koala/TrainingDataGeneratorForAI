@@ -1,0 +1,31 @@
+## User
+In a market, 2 kinds of fruits, strawberries and blueberries are for sale.
+Strawberry is sold by 17 cm3. The weight of strawberry is 80/17 g per cm3.
+Blueberry is sold by 19 g. The volume of blueberry is 32/19 cm3 per g.
+A shopper buys fruits at this market.
+The sum of weight is 556 g.
+The sum of volume is 230 cm3.
+How much strawberry and blueberry does the shopper buy?
+Show one solution.
+## Copilot
+Let's denote the amount of strawberry bought as (x) and the amount of blueberry bought as (y). We have the following information:
+- The weight of strawberry is (\frac{80}{17}) g per cm³.
+- The volume of blueberry is (\frac{32}{19}) cm³ per g.
+- The sum of weight is 556 g: (80x + 19y = 556).
+- The sum of volume is 230 cm³: (17x + 32y = 230).
+We can solve this system of equations to find the values of (x) and (y). Let's start by solving for (x):
+From the second equation, we get:
+[17x = 230 - 32y]
+[x = \frac{230 - 32y}{17}]
+Now substitute this expression for (x) into the first equation:
+[80\left(\frac{230 - 32y}{17}\right) + 19y = 556]
+To simplify, multiply both sides of the equation by 17:
+[80(230 - 32y) + 323y = 556 \cdot 17]
+Expand and rearrange:
+[18400 - 2560y + 323y = 9452]
+[18400 - 2237y = 9452]
+[2237y = 8948]
+[y = 4]
+Now find the value of (x):
+[x = \frac{230 - 32y}{17} = \frac{230 - 32 \cdot 4}{17} = 6]
+Therefore, the shopper buys 6 g of strawberries and 4 g of blueberries.

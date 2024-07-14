@@ -145,3 +145,73 @@ Bing AI Chat fails solving all of these 5 problems.
 |       Solution generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
 | Result of solution verification |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
 |    Result of solving problem    |   Fail    |   Fail    |   Fail    |   Fail    |   Fail    |  Success 0/5  |
+
+### Bing AI Chat (2 Equations, 2 Variables, some sold by measure)
+
+Bing AI Chat fails solving all of these 5 problems.
+
+|                                 | [Problem 1](./BingAIChat/Conversation_SoldByMeasure_2Eqs_2Vars_P01.txt) | [Problem 2](./BingAIChat/Conversation_SoldByMeasure_2Eqs_2Vars_P02.txt) | [Problem 3](./BingAIChat/Conversation_SoldByMeasure_2Eqs_2Vars_P03.txt) | [Problem 4](./BingAIChat/Conversation_SoldByMeasure_2Eqs_2Vars_P04.txt) | [Problem 5](./BingAIChat/Conversation_SoldByMeasure_2Eqs_2Vars_P05.txt) |    Summary    |
+| :-----------------------------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-----------: |
+|       Equation generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+|     Representation of Eq.       |  Correct  |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 1/5  |
+|      Calculation generated      |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+|   Result of calculation check   |  Correct  |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 1/5  |
+|       Solution generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+| Result of solution verification |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
+|    Result of solving problem    |   Fail    |   Fail    |   Fail    |   Fail    |   Fail    |  Success 0/5  |
+
+### Bing AI Chat (2 Equations, 3 Variables, some sold by measure)
+
+Bing AI Chat fails solving all of these 5 problems.
+
+|                                 | [Problem 1](./BingAIChat/Conversation_SoldByMeasure_2Eqs_3Vars_P01.txt) | [Problem 2](./BingAIChat/Conversation_SoldByMeasure_2Eqs_3Vars_P02.txt) | [Problem 3](./BingAIChat/Conversation_SoldByMeasure_2Eqs_3Vars_P03.txt) | [Problem 4](./BingAIChat/Conversation_SoldByMeasure_2Eqs_3Vars_P04.txt) | [Problem 5](./BingAIChat/Conversation_SoldByMeasure_2Eqs_3Vars_P05.txt) |    Summary    |
+| :-----------------------------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-----------: |
+|       Equation generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+|     Representation of Eq.       |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
+|      Calculation generated      |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+|   Result of calculation check   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
+|       Solution generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+| Result of solution verification |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
+|    Result of solving problem    |   Fail    |   Fail    |   Fail    |   Fail    |   Fail    |  Success 0/5  |
+
+### Bing AI Chat (2 Equations, 4 Variables, some sold by measure)
+
+Bing AI Chat fails solving all of these 5 problems.
+
+|                                 | [Problem 1](./BingAIChat/Conversation_SoldByMeasure_2Eqs_4Vars_P01.txt) | [Problem 2](./BingAIChat/Conversation_SoldByMeasure_2Eqs_4Vars_P02.txt) | [Problem 3](./BingAIChat/Conversation_SoldByMeasure_2Eqs_4Vars_P03.txt) | [Problem 4](./BingAIChat/Conversation_SoldByMeasure_2Eqs_4Vars_P04.txt) | [Problem 5](./BingAIChat/Conversation_SoldByMeasure_2Eqs_4Vars_P05.txt) |    Summary    |
+| :-----------------------------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-----------: |
+|       Equation generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+|     Representation of Eq.       |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
+|      Calculation generated      |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+|   Result of calculation check   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
+|       Solution generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+| Result of solution verification |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
+|    Result of solving problem    |   Fail    |   Fail    |   Fail    |   Fail    |   Fail    |  Success 0/5  |
+
+### Bing AI Chat (3 Equations, 3 Variables, some sold by measure)
+
+Bing AI Chat fails solving all of these 5 problems.
+
+|                                 | [Problem 1](./BingAIChat/Conversation_SoldByMeasure_3Eqs_3Vars_P01.txt) | [Problem 2](./BingAIChat/Conversation_SoldByMeasure_3Eqs_3Vars_P02.txt) | [Problem 3](./BingAIChat/Conversation_SoldByMeasure_3Eqs_3Vars_P03.txt) | [Problem 4](./BingAIChat/Conversation_SoldByMeasure_3Eqs_3Vars_P04.txt) | [Problem 5](./BingAIChat/Conversation_SoldByMeasure_3Eqs_3Vars_P05.txt) |    Summary    |
+| :-----------------------------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-----------: |
+|       Equation generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+|     Representation of Eq.       |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
+|      Calculation generated      |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+|   Result of calculation check   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
+|       Solution generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+| Result of solution verification |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
+|    Result of solving problem    |   Fail    |   Fail    |   Fail    |   Fail    |   Fail    |  Success 0/5  |
+
+### Bing AI Chat (3 Equations, 4 Variables, some sold by measure)
+
+Bing AI Chat fails solving all of these 5 problems.
+
+|                                 | [Problem 1](./BingAIChat/Conversation_SoldByMeasure_3Eqs_4Vars_P01.txt) | [Problem 2](./BingAIChat/Conversation_SoldByMeasure_3Eqs_4Vars_P02.txt) | [Problem 3](./BingAIChat/Conversation_SoldByMeasure_3Eqs_4Vars_P03.txt) | [Problem 4](./BingAIChat/Conversation_SoldByMeasure_3Eqs_4Vars_P04.txt) | [Problem 5](./BingAIChat/Conversation_SoldByMeasure_3Eqs_4Vars_P05.txt) |    Summary    |
+| :-----------------------------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-----------: |
+|       Equation generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+|     Representation of Eq.       |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
+|      Calculation generated      |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+|   Result of calculation check   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
+|       Solution generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+| Result of solution verification |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
+|    Result of solving problem    |   Fail    |   Fail    |   Fail    |   Fail    |   Fail    |  Success 0/5  |

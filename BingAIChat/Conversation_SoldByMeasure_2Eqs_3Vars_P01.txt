@@ -1,0 +1,49 @@
+## User
+In a market, 3 kinds of fruits, blueberries, apples and strawberries are for sale.
+The weight of one apple is 16 g. Strawberry is sold by 44 cm3. The weight of strawberry is 29/44 g per cm3.
+Blueberry is sold by 65 g. The volume of blueberry is 29/65 cm3 per g. The volume of one apple is 27 cm3.
+A shopper buys fruits at this market.
+The sum of weight is 802 g.
+The sum of volume is 754 cm3.
+How much blueberry, apple and strawberry does the shopper buy?
+Show one solution.
+## Copilot
+Let's find a solution for the shopper's fruit purchase! We have three types of fruits: blueberries, apples, and strawberries. Here's what we know:
+- Apple:
+    - Weight of one apple: 16 g
+    - Volume of one apple: 27 cm³
+- Strawberry:
+    - Sold by volume: 44 cm³
+    - Weight of strawberry per cm³: 29/44 g/cm³
+- Blueberry:
+    - Sold by weight: 65 g
+    - Volume of blueberry per gram: 29/65 cm³/g
+The shopper's total weight is 802 g, and the total volume is 754 cm³. Let's set up equations for the total weight and volume:
+- Weight equation:
+    - Weight of apples + Weight of strawberries + Weight of blueberries = 802 g
+    - (16a + \frac{29}{44}s + 65b = 802)
+- Volume equation:
+    - Volume of apples + Volume of strawberries + Volume of blueberries = 754 cm³
+    - (27a + 44s + \frac{29}{65}b = 754)
+Now let's solve this system of equations to find the values of (a) (apples), (s) (strawberries), and (b) (blueberries). I'll use substitution or elimination to find a solution. Calculating the exact values might be a bit complex, but we can approximate them.
+Let's proceed with the calculations! 🍎🍓🫐
+## User
+What is the solution?
+## Copilot
+Let's solve the system of equations for the shopper's fruit purchase. We have:
+- Weight equation:
+    - (16a + \frac{29}{44}s + 65b = 802)
+- Volume equation:
+    - (27a + 44s + \frac{29}{65}b = 754)
+To make the calculations more manageable, let's multiply both equations by their respective denominators (44 and 65) to eliminate fractions:
+- Weight equation (multiplied by 44):
+    - (704a + 29s + 2860b = 35288)
+- Volume equation (multiplied by 65):
+    - (1755a + 2860s + 44b = 49010)
+Now, let's solve this system of equations. Subtract 44 times the weight equation from 65 times the volume equation:
+[ 65(1755a + 2860s + 44b) - 44(704a + 29s + 2860b) = 49010 - 35288 ]
+Solving this yields:
+[ 115000s = 13722 ]
+Therefore, the value of (s) (strawberries) is approximately:
+[ s \approx \frac{13722}{115000} ]
+Similarly, we can find the values of (a) (apples) and (b) (blueberries). Let me calculate those for you! 🍎🍓🫐

@@ -1,0 +1,107 @@
+## User
+In a market, 2 kinds of fruits, kiwifruits and blueberries are for sale.
+The weight of one kiwifruit is 21 g.
+The volume of one kiwifruit is 56 cm3. Blueberry is sold by 73 g. The volume of blueberry is 84/73 cm3 per g.
+A shopper buys fruits at this market.
+The sum of weight is 303 g.
+The sum of volume is 476 cm3.
+How much kiwifruit and blueberry does the shopper buy?
+Show one solution.
+## Copilot
+Let's denote the weight of kiwifruits as (x) (in grams) and the weight of blueberries as (y) (in grams). We have the following information:
+- Weight of one kiwifruit: (21) g
+- Volume of one kiwifruit: (56) cm³
+- Blueberries are sold by weight: (73) g
+- Volume of blueberries per gram: (\frac{84}{73}) cm³/g
+- Total weight bought by the shopper: (x + y = 303) g
+- Total volume bought by the shopper: (56x + \frac{84}{73}y = 476) cm³
+We can set up a system of equations based on the given information:
+[
+\begin{align*}
+x + y &= 303 \
+56x + \frac{84}{73}y &= 476
+\end{align*}
+]
+To solve this system, we can multiply the second equation by (73) to get rid of the fraction:
+[
+\begin{align*}
+73(56x) + 84y &= 73(476) \
+3944x + 84y &= 34748
+\end{align*}
+]
+Now let's solve this system of equations. Subtract the first equation from the modified second equation:
+[
+\begin{align*}
+3944x + 84y - (x + y) &= 34748 - 303 \
+3943x + 83y &= 34445
+\end{align*}
+]
+Next, solve for (y):
+[
+\begin{align*}
+83y &= 34445 - 3943x \
+y &= \frac{34445 - 3943x}{83}
+\end{align*}
+]
+Substitute this expression for (y) back into the first equation:
+[
+x + \frac{34445 - 3943x}{83} = 303
+]
+Multiply both sides of the equation by (83) to eliminate the fraction:
+[
+83x + 34445 - 3943x = 83 \cdot 303
+]
+Solving for (x):
+[
+3943x = 34445 - 83 \cdot 303
+]
+[
+x = \frac{34445 - 83 \cdot 303}{3943}
+]
+Now calculate the value of (x). Once we have (x), we can find (y) using the first equation:
+[
+y = 303 - x
+]
+I'll calculate the values for you. Give me a moment.
+## User
+Please show me the solution.
+## Copilot
+Certainly! Let's find the solution.
+Given the system of equations:
+[
+\begin{align*}
+x + y &= 303 \
+56x + \frac{84}{73}y &= 476
+\end{align*}
+]
+First, let's eliminate the fraction in the second equation. Multiply both sides of the second equation by (73):
+[
+73(56x) + 84y = 73(476) \
+3944x + 84y = 34748
+]
+Now subtract the first equation from the modified second equation:
+[
+3943x + 83y = 34445
+]
+Solving for (y):
+[
+y = \frac{34445 - 3943x}{83}
+]
+Next, substitute this expression for (y) back into the first equation:
+[
+x + \frac{34445 - 3943x}{83} = 303
+]
+Multiply both sides by (83) to eliminate the fraction:
+[
+83x + 34445 - 3943x = 83 \cdot 303
+]
+Solving for (x):
+[
+x = \frac{34445 - 83 \cdot 303}{3943}
+]
+Calculating the value of (x), we get:
+[ x \approx 7.5 ]
+Now find (y):
+[ y = 303 - x ]
+[ y \approx 295.5 ]
+Therefore, the shopper buys approximately 7.5 g of kiwifruit and 295.5 g of blueberries. 🥝🫐
