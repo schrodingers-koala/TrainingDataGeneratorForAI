@@ -78,79 +78,94 @@ One solution is apple = 7, grape = 4, melon = 7 and strawberry = 9.
 
 ### Bing AI Chat (2 Equations, 2 Variables)
 
-Bing AI Chat fails solving all of these 5 problems.
+Bing AI Chat succeeded in solving all of these 5 problems.
 
-|                                 | [Problem 1](./BingAIChat/Conversation_2Eqs_2Vars_P01.txt) | [Problem 2](./BingAIChat/Conversation_2Eqs_2Vars_P02.txt) | [Problem 3](./BingAIChat/Conversation_2Eqs_2Vars_P03.txt) | [Problem 4](./BingAIChat/Conversation_2Eqs_2Vars_P04.txt) | [Problem 5](./BingAIChat/Conversation_2Eqs_2Vars_P05.txt) |    Summary    |
+Previous result was 0 success out of 5 problems. (For details, see  [AI Solution Analysis (old)](AI_Solution_Analysis_old.md#2_2))
+
+
+|                                 | [Problem 1](./BingAIChat/2024_0714/Conversation_2Eqs_2Vars_P01.txt) | [Problem 2](./BingAIChat/2024_0714/Conversation_2Eqs_2Vars_P02.txt) | [Problem 3](./BingAIChat/2024_0714/Conversation_2Eqs_2Vars_P03.txt) | [Problem 4](./BingAIChat/2024_0714/Conversation_2Eqs_2Vars_P04.txt) | [Problem 5](./BingAIChat/2024_0714/Conversation_2Eqs_2Vars_P05.txt) |    Summary    |
 | :-----------------------------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-----------: |
 |       Equation generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
 |     Representation of Eq.       |  Correct  |  Correct  |  Correct  |  Correct  |  Correct  |  Correct 5/5  |
-|      Calculation generated      |    Yes    |    Yes    |    No     |    Yes    |    Yes    | Generated 4/5 |
-|   Result of calculation check   |   Wrong   |   Wrong   |     -     |   Wrong   |   Wrong   |  Correct 0/4  |
-|       Solution generated        |    No     |    Yes    |    Yes    |    Yes    |    Yes    | Generated 4/5 |
-| Result of solution verification |     -     |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/4  |
-|    Result of solving problem    |   Fail    |   Fail    |   Fail    |   Fail    |   Fail    |  Success 0/5  |
+|      Calculation generated      |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+|   Result of calculation check   |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    |  Correct 5/5  |
+|       Solution generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+| Result of solution verification |  Correct  |  Correct  |  Correct  |  Correct  |  Correct  |  Correct 5/5  |
+|    Result of solving problem    |  Success  |  Success  |  Success  |  Success  |  SUccess  |  Success 5/5  |
 
 ### Bing AI Chat (2 Equations, 3 Variables)
 
-Bing AI Chat fails solving all of these 5 problems.
+Bing AI Chat succeeded in solving one of these 5 problems.
 
-|                                 | [Problem 1](./BingAIChat/Conversation_2Eqs_3Vars_P01.txt) | [Problem 2](./BingAIChat/Conversation_2Eqs_3Vars_P02.txt) | [Problem 3](./BingAIChat/Conversation_2Eqs_3Vars_P03.txt) | [Problem 4](./BingAIChat/Conversation_2Eqs_3Vars_P04.txt) | [Problem 5](./BingAIChat/Conversation_2Eqs_3Vars_P05.txt) |    Summary    |
+Previous result was 0 success out of 5 problems. (For details, see  [AI Solution Analysis (old)](AI_Solution_Analysis_old.md#2_3))
+
+
+|                                 | [Problem 1](./BingAIChat/2024_0714/Conversation_2Eqs_3Vars_P01.txt) | [Problem 2](./BingAIChat/2024_0714/Conversation_2Eqs_3Vars_P02.txt) | [Problem 3](./BingAIChat/2024_0714/Conversation_2Eqs_3Vars_P03.txt) | [Problem 4](./BingAIChat/2024_0714/Conversation_2Eqs_3Vars_P04.txt) | [Problem 5](./BingAIChat/2024_0714/Conversation_2Eqs_3Vars_P05.txt) |    Summary    |
 | :-----------------------------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-----------: |
 |       Equation generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
 |     Representation of Eq.       |  Correct  |  Correct  |  Correct  |  Correct  |  Correct  |  Correct 5/5  |
-|      Calculation generated      |    Yes    |    Yes    |    No     |    No     |    Yes    | Generated 3/5 |
-|   Result of calculation check   |   Wrong   |   Wrong   |     -     |     -     |   Wrong   |  Correct 0/3  |
-|       Solution generated        |    Yes    |    No     |    Yes    |    Yes    |    Yes    | Generated 4/5 |
-| Result of solution verification |   Wrong   |     -     |   Wrong   |   Wrong   |   Wrong   |  Correct 0/4  |
-|    Result of solving problem    |   Fail    |   Fail    |   Fail    |   Fail    |   Fail    |  Success 0/5  |
+|      Calculation generated      |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+|   Result of calculation check   |  Correct  |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 1/5  |
+|       Solution generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+| Result of solution verification |  Correct  |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 1/5  |
+|    Result of solving problem    |  Success  |   Fail    |   Fail    |   Fail    |   Fail    |  Success 1/5  |
 
 ### Bing AI Chat (2 Equations, 4 Variables)
 
-Bing AI Chat fails solving all of these 5 problems.
+Bing AI Chat failed in solving all of these 5 problems.
 
-|                                 | [Problem 1](./BingAIChat/Conversation_2Eqs_4Vars_P01.txt) | [Problem 2](./BingAIChat/Conversation_2Eqs_4Vars_P02.txt) | [Problem 3](./BingAIChat/Conversation_2Eqs_4Vars_P03.txt) | [Problem 4](./BingAIChat/Conversation_2Eqs_4Vars_P04.txt) | [Problem 5](./BingAIChat/Conversation_2Eqs_4Vars_P05.txt) |    Summary    |
+Previous result was 0 success out of 5 problems. (For details, see  [AI Solution Analysis (old)](AI_Solution_Analysis_old.md#2_4))
+
+
+|                                 | [Problem 1](./BingAIChat/2024_0714/Conversation_2Eqs_4Vars_P01.txt) | [Problem 2](./BingAIChat/2024_0714/Conversation_2Eqs_4Vars_P02.txt) | [Problem 3](./BingAIChat/2024_0714/Conversation_2Eqs_4Vars_P03.txt) | [Problem 4](./BingAIChat/2024_0714/Conversation_2Eqs_4Vars_P04.txt) | [Problem 5](./BingAIChat/2024_0714/Conversation_2Eqs_4Vars_P05.txt) |    Summary    |
 | :-----------------------------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-----------: |
 |       Equation generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
 |     Representation of Eq.       |  Correct  |  Correct  |  Correct  |  Correct  |  Correct  |  Correct 5/5  |
-|      Calculation generated      |    No     |    No     |    Yes    |    Yes    |    Yes    | Generated 3/5 |
-|   Result of calculation check   |     -     |     -     |   Wrong   |   Wrong   |   Wrong   |  Correct 0/3  |
-|       Solution generated        |    Yes    |    Yes    |    Yes    |    No     |    Yes    | Generated 4/5 |
-| Result of solution verification |   Wrong   |   Wrong   |   Wrong   |     -     |   Wrong   |  Correct 0/4  |
+|      Calculation generated      |    Yes    |    No     |    Yes    |    Yes    |    No     | Generated 3/5 |
+|   Result of calculation check   |   Wrong   |     -     |   Wrong   |   Wrong   |     -     |  Correct 0/3  |
+|       Solution generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+| Result of solution verification |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
 |    Result of solving problem    |   Fail    |   Fail    |   Fail    |   Fail    |   Fail    |  Success 0/5  |
 
 ### Bing AI Chat (3 Equations, 3 Variables)
 
-Bing AI Chat fails solving all of these 5 problems.
+Bing AI Chat failed in solving all of these 5 problems.
 
-|                                 | [Problem 1](./BingAIChat/Conversation_3Eqs_3Vars_P01.txt) | [Problem 2](./BingAIChat/Conversation_3Eqs_3Vars_P02.txt) | [Problem 3](./BingAIChat/Conversation_3Eqs_3Vars_P03.txt) | [Problem 4](./BingAIChat/Conversation_3Eqs_3Vars_P04.txt) | [Problem 5](./BingAIChat/Conversation_3Eqs_3Vars_P05.txt) |    Summary    |
+Previous result was 0 success out of 5 problems. (For details, see  [AI Solution Analysis (old)](AI_Solution_Analysis_old.md#3_3))
+
+
+|                                 | [Problem 1](./BingAIChat/2024_0714/Conversation_3Eqs_3Vars_P01.txt) | [Problem 2](./BingAIChat/2024_0714/Conversation_3Eqs_3Vars_P02.txt) | [Problem 3](./BingAIChat/2024_0714/Conversation_3Eqs_3Vars_P03.txt) | [Problem 4](./BingAIChat/2024_0714/Conversation_3Eqs_3Vars_P04.txt) | [Problem 5](./BingAIChat/2024_0714/Conversation_3Eqs_3Vars_P05.txt) |    Summary    |
 | :-----------------------------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-----------: |
 |       Equation generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
 |     Representation of Eq.       |  Correct  |  Correct  |  Correct  |  Correct  |  Correct  |  Correct 5/5  |
-|      Calculation generated      |    No     |    Yes    |    No     |    No     |    Yes    | Generated 2/5 |
-|   Result of calculation check   |     -     |   Wrong   |     -     |     -     |   Wrong   |  Correct 0/2  |
+|      Calculation generated      |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
+|   Result of calculation check   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
 |       Solution generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
 | Result of solution verification |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
 |    Result of solving problem    |   Fail    |   Fail    |   Fail    |   Fail    |   Fail    |  Success 0/5  |
 
 ### Bing AI Chat (3 Equations, 4 Variables)
 
-Bing AI Chat fails solving all of these 5 problems.
+Bing AI Chat failed in solving all of these 5 problems.
 
-|                                 | [Problem 1](./BingAIChat/Conversation_3Eqs_4Vars_P01.txt) | [Problem 2](./BingAIChat/Conversation_3Eqs_4Vars_P02.txt) | [Problem 3](./BingAIChat/Conversation_3Eqs_4Vars_P03.txt) | [Problem 4](./BingAIChat/Conversation_3Eqs_4Vars_P04.txt) | [Problem 5](./BingAIChat/Conversation_3Eqs_4Vars_P05.txt) |    Summary    |
+Previous result was 0 success out of 5 problems. (For details, see  [AI Solution Analysis (old)](AI_Solution_Analysis_old.md#3_4))
+
+
+|                                 | [Problem 1](./BingAIChat/2024_0714/Conversation_3Eqs_4Vars_P01.txt) | [Problem 2](./BingAIChat/2024_0714/Conversation_3Eqs_4Vars_P02.txt) | [Problem 3](./BingAIChat/2024_0714/Conversation_3Eqs_4Vars_P03.txt) | [Problem 4](./BingAIChat/2024_0714/Conversation_3Eqs_4Vars_P04.txt) | [Problem 5](./BingAIChat/2024_0714/Conversation_3Eqs_4Vars_P05.txt) |    Summary    |
 | :-----------------------------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-----------: |
 |       Equation generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
 |     Representation of Eq.       |  Correct  |  Correct  |  Correct  |  Correct  |  Correct  |  Correct 5/5  |
-|      Calculation generated      |    No     |    Yes    |    Yes    |    No     |    No     | Generated 2/5 |
-|   Result of calculation check   |     -     |   Wrong   |   Wrong   |     -     |     -     |  Correct 0/2  |
+|      Calculation generated      |    Yes    |    No     |    No     |    Yes    |    Yes    | Generated 3/5 |
+|   Result of calculation check   |   Wrong   |     -     |     -     |   Wrong   |   Wrong   |  Correct 0/3  |
 |       Solution generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
 | Result of solution verification |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
 |    Result of solving problem    |   Fail    |   Fail    |   Fail    |   Fail    |   Fail    |  Success 0/5  |
 
 ### Bing AI Chat (2 Equations, 2 Variables, some sold by measure)
 
-Bing AI Chat fails solving all of these 5 problems.
+Bing AI Chat failed in solving all of these 5 problems.
 
-|                                 | [Problem 1](./BingAIChat/Conversation_SoldByMeasure_2Eqs_2Vars_P01.txt) | [Problem 2](./BingAIChat/Conversation_SoldByMeasure_2Eqs_2Vars_P02.txt) | [Problem 3](./BingAIChat/Conversation_SoldByMeasure_2Eqs_2Vars_P03.txt) | [Problem 4](./BingAIChat/Conversation_SoldByMeasure_2Eqs_2Vars_P04.txt) | [Problem 5](./BingAIChat/Conversation_SoldByMeasure_2Eqs_2Vars_P05.txt) |    Summary    |
+|                                 | [Problem 1](./BingAIChat/2024_0714/Conversation_SoldByMeasure_2Eqs_2Vars_P01.txt) | [Problem 2](./BingAIChat/2024_0714/Conversation_SoldByMeasure_2Eqs_2Vars_P02.txt) | [Problem 3](./BingAIChat/2024_0714/Conversation_SoldByMeasure_2Eqs_2Vars_P03.txt) | [Problem 4](./BingAIChat/2024_0714/Conversation_SoldByMeasure_2Eqs_2Vars_P04.txt) | [Problem 5](./BingAIChat/2024_0714/Conversation_SoldByMeasure_2Eqs_2Vars_P05.txt) |    Summary    |
 | :-----------------------------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-----------: |
 |       Equation generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
 |     Representation of Eq.       |  Correct  |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 1/5  |
@@ -162,9 +177,9 @@ Bing AI Chat fails solving all of these 5 problems.
 
 ### Bing AI Chat (2 Equations, 3 Variables, some sold by measure)
 
-Bing AI Chat fails solving all of these 5 problems.
+Bing AI Chat failed in solving all of these 5 problems.
 
-|                                 | [Problem 1](./BingAIChat/Conversation_SoldByMeasure_2Eqs_3Vars_P01.txt) | [Problem 2](./BingAIChat/Conversation_SoldByMeasure_2Eqs_3Vars_P02.txt) | [Problem 3](./BingAIChat/Conversation_SoldByMeasure_2Eqs_3Vars_P03.txt) | [Problem 4](./BingAIChat/Conversation_SoldByMeasure_2Eqs_3Vars_P04.txt) | [Problem 5](./BingAIChat/Conversation_SoldByMeasure_2Eqs_3Vars_P05.txt) |    Summary    |
+|                                 | [Problem 1](./BingAIChat/2024_0714/Conversation_SoldByMeasure_2Eqs_3Vars_P01.txt) | [Problem 2](./BingAIChat/2024_0714/Conversation_SoldByMeasure_2Eqs_3Vars_P02.txt) | [Problem 3](./BingAIChat/2024_0714/Conversation_SoldByMeasure_2Eqs_3Vars_P03.txt) | [Problem 4](./BingAIChat/2024_0714/Conversation_SoldByMeasure_2Eqs_3Vars_P04.txt) | [Problem 5](./BingAIChat/2024_0714/Conversation_SoldByMeasure_2Eqs_3Vars_P05.txt) |    Summary    |
 | :-----------------------------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-----------: |
 |       Equation generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
 |     Representation of Eq.       |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
@@ -176,9 +191,9 @@ Bing AI Chat fails solving all of these 5 problems.
 
 ### Bing AI Chat (2 Equations, 4 Variables, some sold by measure)
 
-Bing AI Chat fails solving all of these 5 problems.
+Bing AI Chat failed in solving all of these 5 problems.
 
-|                                 | [Problem 1](./BingAIChat/Conversation_SoldByMeasure_2Eqs_4Vars_P01.txt) | [Problem 2](./BingAIChat/Conversation_SoldByMeasure_2Eqs_4Vars_P02.txt) | [Problem 3](./BingAIChat/Conversation_SoldByMeasure_2Eqs_4Vars_P03.txt) | [Problem 4](./BingAIChat/Conversation_SoldByMeasure_2Eqs_4Vars_P04.txt) | [Problem 5](./BingAIChat/Conversation_SoldByMeasure_2Eqs_4Vars_P05.txt) |    Summary    |
+|                                 | [Problem 1](./BingAIChat/2024_0714/Conversation_SoldByMeasure_2Eqs_4Vars_P01.txt) | [Problem 2](./BingAIChat/2024_0714/Conversation_SoldByMeasure_2Eqs_4Vars_P02.txt) | [Problem 3](./BingAIChat/2024_0714/Conversation_SoldByMeasure_2Eqs_4Vars_P03.txt) | [Problem 4](./BingAIChat/2024_0714/Conversation_SoldByMeasure_2Eqs_4Vars_P04.txt) | [Problem 5](./BingAIChat/2024_0714/Conversation_SoldByMeasure_2Eqs_4Vars_P05.txt) |    Summary    |
 | :-----------------------------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-----------: |
 |       Equation generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
 |     Representation of Eq.       |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
@@ -190,9 +205,9 @@ Bing AI Chat fails solving all of these 5 problems.
 
 ### Bing AI Chat (3 Equations, 3 Variables, some sold by measure)
 
-Bing AI Chat fails solving all of these 5 problems.
+Bing AI Chat failed in solving all of these 5 problems.
 
-|                                 | [Problem 1](./BingAIChat/Conversation_SoldByMeasure_3Eqs_3Vars_P01.txt) | [Problem 2](./BingAIChat/Conversation_SoldByMeasure_3Eqs_3Vars_P02.txt) | [Problem 3](./BingAIChat/Conversation_SoldByMeasure_3Eqs_3Vars_P03.txt) | [Problem 4](./BingAIChat/Conversation_SoldByMeasure_3Eqs_3Vars_P04.txt) | [Problem 5](./BingAIChat/Conversation_SoldByMeasure_3Eqs_3Vars_P05.txt) |    Summary    |
+|                                 | [Problem 1](./BingAIChat/2024_0714/Conversation_SoldByMeasure_3Eqs_3Vars_P01.txt) | [Problem 2](./BingAIChat/2024_0714/Conversation_SoldByMeasure_3Eqs_3Vars_P02.txt) | [Problem 3](./BingAIChat/2024_0714/Conversation_SoldByMeasure_3Eqs_3Vars_P03.txt) | [Problem 4](./BingAIChat/2024_0714/Conversation_SoldByMeasure_3Eqs_3Vars_P04.txt) | [Problem 5](./BingAIChat/2024_0714/Conversation_SoldByMeasure_3Eqs_3Vars_P05.txt) |    Summary    |
 | :-----------------------------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-----------: |
 |       Equation generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
 |     Representation of Eq.       |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
@@ -204,9 +219,9 @@ Bing AI Chat fails solving all of these 5 problems.
 
 ### Bing AI Chat (3 Equations, 4 Variables, some sold by measure)
 
-Bing AI Chat fails solving all of these 5 problems.
+Bing AI Chat failed in solving all of these 5 problems.
 
-|                                 | [Problem 1](./BingAIChat/Conversation_SoldByMeasure_3Eqs_4Vars_P01.txt) | [Problem 2](./BingAIChat/Conversation_SoldByMeasure_3Eqs_4Vars_P02.txt) | [Problem 3](./BingAIChat/Conversation_SoldByMeasure_3Eqs_4Vars_P03.txt) | [Problem 4](./BingAIChat/Conversation_SoldByMeasure_3Eqs_4Vars_P04.txt) | [Problem 5](./BingAIChat/Conversation_SoldByMeasure_3Eqs_4Vars_P05.txt) |    Summary    |
+|                                 | [Problem 1](./BingAIChat/2024_0714/Conversation_SoldByMeasure_3Eqs_4Vars_P01.txt) | [Problem 2](./BingAIChat/2024_0714/Conversation_SoldByMeasure_3Eqs_4Vars_P02.txt) | [Problem 3](./BingAIChat/2024_0714/Conversation_SoldByMeasure_3Eqs_4Vars_P03.txt) | [Problem 4](./BingAIChat/2024_0714/Conversation_SoldByMeasure_3Eqs_4Vars_P04.txt) | [Problem 5](./BingAIChat/2024_0714/Conversation_SoldByMeasure_3Eqs_4Vars_P05.txt) |    Summary    |
 | :-----------------------------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-----------: |
 |       Equation generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
 |     Representation of Eq.       |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
@@ -215,3 +230,6 @@ Bing AI Chat fails solving all of these 5 problems.
 |       Solution generated        |    Yes    |    Yes    |    Yes    |    Yes    |    Yes    | Generated 5/5 |
 | Result of solution verification |   Wrong   |   Wrong   |   Wrong   |   Wrong   |   Wrong   |  Correct 0/5  |
 |    Result of solving problem    |   Fail    |   Fail    |   Fail    |   Fail    |   Fail    |  Success 0/5  |
+
+## Resources
+- [AI Solution Analysis (old)](AI_Solution_Analysis_old.md)

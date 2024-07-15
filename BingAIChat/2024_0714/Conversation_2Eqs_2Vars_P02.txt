@@ -1,0 +1,25 @@
+## User
+In a market, 2 kinds of fruits, melons and blueberries are for sale.
+The price of melon is 29 cents. The price of blueberry is 92 cents.
+A shopper buys fruits at this market.
+The number of fruits is 3.
+The sum of price is 150 cents.
+How many melons and blueberries does the shopper buy?
+Show one solution.
+## Copilot
+Let's denote the number of melons as (m) and the number of blueberries as (b). We have the following information:
+- The price of a melon is 29 cents: (29m).
+- The price of a blueberry is 92 cents: (92b).
+- The total number of fruits bought is 3: (m + b = 3).
+- The total cost is 150 cents: (29m + 92b = 150).
+We can solve this system of equations to find the values of (m) and (b). First, let's express (m) in terms of (b):
+[m = 3 - b]
+Substitute this into the second equation:
+[29(3 - b) + 92b = 150]
+Solving for (b):
+[87 - 29b + 92b = 150]
+[63b = 63]
+[b = 1]
+Now we can find the value of (m):
+[m = 3 - b = 3 - 1 = 2]
+Therefore, the shopper buys 2 melons and 1 blueberry. 🍉🫐

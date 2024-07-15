@@ -1,0 +1,26 @@
+## User
+In a market, 2 kinds of fruits, kiwifruits and grapes are for sale.
+The price of kiwifruit is 34 cents. The price of grape is 36 cents.
+A shopper buys fruits at this market.
+The number of fruits is 4.
+The sum of price is 144 cents.
+How many kiwifruits and grapes does the shopper buy?
+Show one solution.
+## Copilot
+Let's denote the number of kiwifruits as (k) and the number of grapes as (g). We have the following information:
+- The price of a kiwifruit is 34 cents, so the total cost of kiwifruits is (34k) cents.
+- The price of a grape is 36 cents, so the total cost of grapes is (36g) cents.
+- The total number of fruits bought is 4, so we have (k + g = 4).
+- The sum of the prices is 144 cents, so we have (34k + 36g = 144).
+We can solve this system of equations to find the values of (k) and (g):
+First, let's express (k) in terms of (g):
+[ k = 4 - g ]
+Now substitute this expression for (k) into the second equation:
+[ 34(4 - g) + 36g = 144 ]
+Solving for (g):
+[ 136 - 34g + 36g = 144 ]
+[ 2g = 8 ]
+[ g = 4 ]
+Now find the value of (k):
+[ k = 4 - g = 4 - 4 = 0 ]
+Therefore, the shopper buys 0 kiwifruits and 4 grapes. 🍇

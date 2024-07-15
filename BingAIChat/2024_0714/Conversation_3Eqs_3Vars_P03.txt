@@ -1,0 +1,52 @@
+## User
+In a market, 3 kinds of fruits, apples, melons and kiwifruits are for sale.
+The price of apple is 45 cents. The price of melon is 78 cents. The price of kiwifruit is 9 cents.
+The weight of apple is 61 g. The weight of melon is 97 g. The weight of kiwifruit is 72 g.
+A shopper buys fruits at this market.
+The number of fruits is 14.
+The sum of price is 474 cents.
+The sum of weight is 1086 g.
+How many apples, melons and kiwifruits does the shopper buy?
+Show one solution.
+## Copilot
+Let's find the solution! We have three types of fruits: apples, melons, and kiwifruits. Let's denote the number of apples as (a), melons as (m), and kiwifruits as (k).
+We're given the following information:
+- Price of an apple: 45 cents
+- Price of a melon: 78 cents
+- Price of a kiwifruit: 9 cents
+- Weight of an apple: 61 g
+- Weight of a melon: 97 g
+- Weight of a kiwifruit: 72 g
+- Total number of fruits bought: 14
+- Total price: 474 cents
+- Total weight: 1086 g
+Let's set up the equations:
+- Total price equation:
+[45a + 78m + 9k = 474]
+- Total weight equation:
+[61a + 97m + 72k = 1086]
+Now let's solve this system of equations. I'll use the substitution method:
+From the total price equation, we can express (k) in terms of (a) and (m):
+[k = \frac{474 - 45a - 78m}{9}]
+Substitute this expression for (k) into the total weight equation:
+[61a + 97m + 72\left(\frac{474 - 45a - 78m}{9}\right) = 1086]
+Solving for (m):
+[61a + 97m + 8(474 - 45a - 78m) = 1086]
+[61a + 97m + 3792 - 360a - 624m = 1086]
+[36a - 527m = -1706]
+[36a = 527m - 1706]
+[a = \frac{527m - 1706}{36}]
+Since the number of fruits is a whole number, we need to find integer solutions for (a) and (m). Let's try some values for (m):
+- If (m = 1):
+[a = \frac{527 - 1706}{36} = -31.5] (Not a whole number)
+- If (m = 2):
+[a = \frac{1054 - 1706}{36} = -15.5] (Not a whole number)
+- If (m = 3):
+[a = \frac{1581 - 1706}{36} = -3.5] (Not a whole number)
+- If (m = 4):
+[a = \frac{2108 - 1706}{36} = 11]
+So, one solution is:
+- Apples ((a)): 11
+- Melons ((m)): 4
+- Kiwifruits ((k)): (14 - 11 - 4 = 1)
+Therefore, the shopper buys 11 apples, 4 melons, and 1 kiwifruit. 🍎🍈🥝

@@ -1,0 +1,33 @@
+## User
+In a market, 3 kinds of fruits, kiwifruits, oranges and blueberries are for sale.
+The price of kiwifruit is 56 cents. The price of orange is 44 cents. The price of blueberry is 40 cents.
+A shopper buys fruits at this market.
+The number of fruits is 5.
+The sum of price is 240 cents.
+How many kiwifruits, oranges and blueberries does the shopper buy?
+Show one solution.
+## Copilot
+Certainly! Let's solve this problem step by step. We'll denote the number of kiwifruits as $$k$$, oranges as $$o$$, and blueberries as $$b$$.
+- We know that the total number of fruits is 5:
+$$k + o + b = 5$$
+- The total cost is 240 cents:
+$$56k + 44o + 40b = 240$$
+- We can use the first equation to express one of the variables in terms of the others. Let's solve for $$k$$:
+$$k = 5 - o - b$$
+- Now substitute the expression for $$k$$ into the second equation:
+$$56(5 - o - b) + 44o + 40b = 240$$
+- Distribute the coefficients:
+$$280 - 56o - 56b + 44o + 40b = 240$$
+- Combine like terms:
+$$280 - 12o - 16b = 240$$
+- Rearrange the equation:
+$$12o + 16b = 40$$
+- Divide both sides by 4:
+$$3o + 4b = 10$$
+- Now let's find integer solutions for $$o$$ and $$b$$ that satisfy this equation. One possible solution is:
+    - $$o = 2$$
+    - $$b = 1$$
+- Finally, calculate the number of kiwifruits:
+$$k = 5 - o - b = 5 - 2 - 1 = 2$$
+Therefore, the shopper buys 2 kiwifruits, 2 oranges, and 1 blueberry. 🥝🍊🫐
+If you'd like to explore more solutions or have any other questions, feel free to ask! 😊

@@ -1,0 +1,27 @@
+## User
+In a market, 2 kinds of fruits, blueberries and melons are for sale.
+The price of blueberry is 61 cents. The price of melon is 25 cents.
+A shopper buys fruits at this market.
+The number of fruits is 7.
+The sum of price is 355 cents.
+How many blueberries and melons does the shopper buy?
+Show one solution.
+## Copilot
+Let's denote the number of blueberries as (b) and the number of melons as (m). We have the following information:
+- The price of a blueberry is 61 cents, so the total cost of blueberries is (61b) cents.
+- The price of a melon is 25 cents, so the total cost of melons is (25m) cents.
+- The total number of fruits is 7, so we have the equation: (b + m = 7).
+- The sum of the prices is 355 cents, so we have the equation: (61b + 25m = 355).
+We can solve this system of equations to find the values of (b) and (m). Let's start by solving for (b):
+From the first equation, we get:
+[ b = 7 - m ]
+Substitute this expression for (b) into the second equation:
+[ 61(7 - m) + 25m = 355 ]
+Solving for (m):
+[ 427 - 61m + 25m = 355 ]
+[ 427 - 36m = 355 ]
+[ 36m = 72 ]
+[ m = 2 ]
+Now that we know (m), we can find (b):
+[ b = 7 - m = 7 - 2 = 5 ]
+Therefore, the shopper buys 5 blueberries and 2 melons. 🍇🍈

@@ -1,0 +1,56 @@
+## User
+In a market, 3 kinds of fruits, apples, grapes and strawberries are for sale.
+The price of apple is 62 cents. The price of grape is 26 cents. The price of strawberry is 72 cents.
+The weight of apple is 1 g. The weight of grape is 46 g. The weight of strawberry is 73 g.
+A shopper buys fruits at this market.
+The number of fruits is 15.
+The sum of price is 908 cents.
+The sum of weight is 465 g.
+How many apples, grapes and strawberries does the shopper buy?
+Show one solution.
+## Copilot
+Let's find the solution step by step. We'll denote the number of apples as (a), grapes as (g), and strawberries as (s).
+- Price Equation:
+The total price is given as 908 cents. We can express this as:
+[62a + 26g + 72s = 908]
+- Weight Equation:
+The total weight is given as 465 grams. We can express this as:
+[a + 46g + 73s = 465]
+- Number of Fruits Equation:
+The total number of fruits is 15. We can express this as:
+[a + g + s = 15]
+Now let's solve this system of equations. I'll use substitution to find the values of (a), (g), and (s).
+First, let's solve for (a) in terms of (g) and (s) using the third equation:
+[a = 15 - g - s]
+Next, substitute this expression for (a) into the first two equations:
+[62(15 - g - s) + 26g + 72s = 908]
+[15g + 10s = 246]
+And:
+[15 - g - s + 46g + 73s = 465]
+[31g + 72s = 450]
+Now we have a system of two equations with two variables:
+- (15g + 10s = 246)
+- (31g + 72s = 450)
+Solving this system, we find:
+(g = 6) and (s = 3)
+Finally, calculate the value of (a):
+[a = 15 - g - s = 15 - 6 - 3 = 6]
+Therefore, the shopper buys 6 apples, 6 grapes, and 3 strawberries. 🍎🍇🍓
+## User
+Please calculate the sum of price and the sum of weight for your answer.
+## Copilot
+Certainly! Let's calculate the sum of price and the sum of weight for the solution we found:
+- Sum of Price:
+    - Apples: (6) apples at (62) cents each = (6 \times 62 = 372) cents
+    - Grapes: (6) grapes at (26) cents each = (6 \times 26 = 156) cents
+    - Strawberries: (3) strawberries at (72) cents each = (3 \times 72 = 216) cents
+    - Total price = (372 + 156 + 216 = 744) cents
+- Sum of Weight:
+    - Apples: (6) apples, each weighing (1) gram = (6) grams
+    - Grapes: (6) grapes, each weighing (46) grams = (276) grams
+    - Strawberries: (3) strawberries, each weighing (73) grams = (219) grams
+    - Total weight = (6 + 276 + 219 = 501) grams
+Therefore:
+- Sum of price = (744) cents
+- Sum of weight = (501) grams 🍎🍇🍓
+If you have any more questions or need further assistance, feel free to ask! 😊

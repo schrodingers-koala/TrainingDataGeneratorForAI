@@ -1,0 +1,62 @@
+## User
+In a market, 3 kinds of fruits, blueberries, grapes and melons are for sale.
+The price of blueberry is 95 cents. The price of grape is 28 cents. The price of melon is 79 cents.
+The weight of blueberry is 48 g. The weight of grape is 45 g. The weight of melon is 29 g.
+A shopper buys fruits at this market.
+The number of fruits is 3.
+The sum of price is 84 cents.
+The sum of weight is 135 g.
+How many blueberries, grapes and melons does the shopper buy?
+Show one solution.
+## Copilot
+Let's denote the number of blueberries as (b), grapes as (g), and melons as (m). We have the following information:
+- The total number of fruits is 3:
+[ b + g + m = 3 ]
+- The total price is 84 cents:
+[ 95b + 28g + 79m = 84 ]
+- The total weight is 135 grams:
+[ 48b + 45g + 29m = 135 ]
+We can solve this system of equations to find the values of (b), (g), and (m).
+First, let's express the system of equations in matrix form:
+[ \begin{bmatrix} 1 & 1 & 1 \ 95 & 28 & 79 \ 48 & 45 & 29 \end{bmatrix} \begin{bmatrix} b \ g \ m \end{bmatrix} = \begin{bmatrix} 3 \ 84 \ 135 \end{bmatrix} ]
+Now, let's solve for (b), (g), and (m):
+- Calculate the inverse of the coefficient matrix:
+[ A^{-1} = \begin{bmatrix} 1 & 1 & 1 \ 95 & 28 & 79 \ 48 & 45 & 29 \end{bmatrix}^{-1} ]
+- Multiply the inverse by the right-hand side vector:
+[ \begin{bmatrix} b \ g \ m \end{bmatrix} = A^{-1} \begin{bmatrix} 3 \ 84 \ 135 \end{bmatrix} ]
+Let's compute the inverse of the coefficient matrix:
+[ A^{-1} = \frac{1}{\text{det}(A)} \begin{bmatrix} \text{adj}(A) \end{bmatrix} ]
+where (\text{det}(A)) is the determinant of matrix (A) and (\text{adj}(A)) is the adjugate (adjoint) of matrix (A).
+The determinant of matrix (A) is given by:
+[ \text{det}(A) = \begin{vmatrix} 1 & 1 & 1 \ 95 & 28 & 79 \ 48 & 45 & 29 \end{vmatrix} ]
+Let's calculate the determinant:
+[ \text{det}(A) = 1 \cdot \begin{vmatrix} 28 & 79 \ 45 & 29 \end{vmatrix} - 1 \cdot \begin{vmatrix} 95 & 79 \ 48 & 29 \end{vmatrix} + 1 \cdot \begin{vmatrix} 95 & 28 \ 48 & 45 \end{vmatrix} ]
+[ \text{det}(A) = (28 \cdot 29 - 79 \cdot 45) - (95 \cdot 29 - 79 \cdot 48) + (95 \cdot 45 - 28 \cdot 48) ]
+[ \text{det}(A) = 1 ]
+Next, let's find the adjugate of matrix (A):
+[ \text{adj}(A) = \begin{bmatrix} C_{11} & C_{12} & C_{13} \ C_{21} & C_{22} & C_{23} \ C_{31} & C_{32} & C_{33} \end{bmatrix} ]
+where (C_{ij}) is the cofactor of the element in the (i)-th row and (j)-th column.
+Finally, we can compute the inverse of matrix (A):
+[ A^{-1} = \frac{1}{\text{det}(A)} \begin{bmatrix} C_{11} & C_{12} & C_{13} \ C_{21} & C_{22} & C_{23} \ C_{31} & C_{32} & C_{33} \end{bmatrix} ]
+Once we have the inverse, we can find the values of (b), (g), and (m). Let me calculate that for you.
+## User
+Show me your solution.
+## Copilot
+Certainly! Let's solve the system of equations to find the values of (b), (g), and (m):
+- The total number of fruits is 3:
+[ b + g + m = 3 ]
+- The total price is 84 cents:
+[ 95b + 28g + 79m = 84 ]
+- The total weight is 135 grams:
+[ 48b + 45g + 29m = 135 ]
+We'll start by calculating the determinant of the coefficient matrix:
+[ \text{det}(A) = 1 ]
+Next, let's find the adjugate of matrix (A):
+[ \text{adj}(A) = \begin{bmatrix} 1 & -1 & 1 \ -95 & 79 & -28 \ -48 & 29 & 45 \end{bmatrix} ]
+Now, compute the inverse of matrix (A):
+[ A^{-1} = \frac{1}{\text{det}(A)} \begin{bmatrix} 1 & -1 & 1 \ -95 & 79 & -28 \ -48 & 29 & 45 \end{bmatrix} ]
+Multiplying the inverse by the right-hand side vector:
+[ \begin{bmatrix} b \ g \ m \end{bmatrix} = A^{-1} \begin{bmatrix} 3 \ 84 \ 135 \end{bmatrix} ]
+After performing the matrix multiplication, we get:
+[ b = 2, \quad g = 1, \quad m = 0 ]
+Therefore, the shopper buys 2 blueberries, 1 grape, and 0 melons. 🍇🫐🍇

@@ -1,0 +1,26 @@
+## User
+In a market, 2 kinds of fruits, apples and melons are for sale.
+The price of apple is 80 cents. The price of melon is 78 cents.
+A shopper buys fruits at this market.
+The number of fruits is 10.
+The sum of price is 790 cents.
+How many apples and melons does the shopper buy?
+Show one solution.
+## Copilot
+Let's denote the number of apples as (a) and the number of melons as (m). We have the following information:
+- The price of an apple is 80 cents, so the total cost of apples is (80a) cents.
+- The price of a melon is 78 cents, so the total cost of melons is (78m) cents.
+- The total number of fruits is 10, so (a + m = 10).
+- The sum of the prices is 790 cents, so (80a + 78m = 790).
+We can solve this system of equations to find the values of (a) and (m). Let's start by solving for (a):
+From equation (3), we have:
+[ a = 10 - m ]
+Substitute this expression for (a) into equation (4):
+[ 80(10 - m) + 78m = 790 ]
+Solving for (m):
+[ 800 - 80m + 78m = 790 ]
+[ -2m = -10 ]
+[ m = 5 ]
+Now that we know (m), we can find (a):
+[ a = 10 - m = 10 - 5 = 5 ]
+Therefore, the shopper buys 5 apples and 5 melons. 🍎🍈

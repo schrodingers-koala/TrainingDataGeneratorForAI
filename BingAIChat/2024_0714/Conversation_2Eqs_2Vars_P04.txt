@@ -1,0 +1,26 @@
+## User
+In a market, 2 kinds of fruits, blueberries and kiwifruits are for sale.
+The price of blueberry is 40 cents. The price of kiwifruit is 79 cents.
+A shopper buys fruits at this market.
+The number of fruits is 14.
+The sum of price is 911 cents.
+How many blueberries and kiwifruits does the shopper buy?
+Show one solution.
+## Copilot
+Let's denote the number of blueberries as (b) and the number of kiwifruits as (k). We have the following information:
+- The price of a blueberry is 40 cents, so the total cost of blueberries is (40b) cents.
+- The price of a kiwifruit is 79 cents, so the total cost of kiwifruits is (79k) cents.
+- The total number of fruits is 14, so we have the equation: (b + k = 14).
+- The sum of the prices is 911 cents, so we have the equation: (40b + 79k = 911).
+We can solve this system of equations to find the values of (b) and (k). Let's start by solving for (b):
+From the first equation, we get:
+[ b = 14 - k ]
+Substitute this expression for (b) into the second equation:
+[ 40(14 - k) + 79k = 911 ]
+Solving for (k):
+[ 560 - 40k + 79k = 911 ]
+[ 39k = 351 ]
+[ k = 9 ]
+Now that we know (k), we can find (b):
+[ b = 14 - 9 = 5 ]
+Therefore, the shopper buys 5 blueberries and 9 kiwifruits. 🍇🥝

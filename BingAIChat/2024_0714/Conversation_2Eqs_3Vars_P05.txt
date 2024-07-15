@@ -1,0 +1,32 @@
+## User
+In a market, 3 kinds of fruits, blueberries, apples and strawberries are for sale.
+The price of blueberry is 4 cents. The price of apple is 60 cents. The price of strawberry is 28 cents.
+A shopper buys fruits at this market.
+The number of fruits is 13.
+The sum of price is 316 cents.
+How many blueberries, apples and strawberries does the shopper buy?
+Show one solution.
+## Copilot
+Let's denote the number of blueberries as (b), the number of apples as (a), and the number of strawberries as (s). We have the following information:
+- The total number of fruits is 13:
+[ b + a + s = 13 ]
+- The total cost is 316 cents:
+[ 4b + 60a + 28s = 316 ]
+We can solve this system of equations to find the values of (b), (a), and (s). Let's proceed:
+From the first equation, we can express (s) in terms of (b) and (a):
+[ s = 13 - b - a ]
+Substitute this expression for (s) into the second equation:
+[ 4b + 60a + 28(13 - b - a) = 316 ]
+Simplify the equation:
+[ 4b + 60a + 364 - 28b - 28a = 316 ]
+Combine like terms:
+[ 32b + 32a = 316 - 364 ]
+[ 32b + 32a = -48 ]
+Divide both sides by 32:
+[ b + a = -1.5 ]
+Since the number of fruits cannot be negative, we'll consider non-negative integer solutions. Let's try different values for (b) and (a):
+- If (b = 0), then (a = -1.5), which is not a valid solution.
+- If (b = 1), then (a = -2.5), which is also not valid.
+- If (b = 2), then (a = -3.5), still not valid.
+- If (b = 3), then (a = -4.5), not valid either.
+We can see that there are no valid integer solutions for (b) and (a). Therefore, it seems there might be an error in the given information. Please double-check the problem, and let me know if you need further assistance! 😊

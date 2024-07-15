@@ -1,0 +1,32 @@
+## User
+In a market, 3 kinds of fruits, grapes, kiwifruits and apples are for sale.
+The price of grape is 30 cents. The price of kiwifruit is 51 cents. The price of apple is 28 cents.
+A shopper buys fruits at this market.
+The number of fruits is 8.
+The sum of price is 345 cents.
+How many grapes, kiwifruits and apples does the shopper buy?
+Show one solution.
+## Copilot
+Let's denote the number of grapes as (g), kiwifruits as (k), and apples as (a). We have the following information:
+- The price of grapes is 30 cents, so the total cost of grapes is (30g) cents.
+- The price of kiwifruits is 51 cents, so the total cost of kiwifruits is (51k) cents.
+- The price of apples is 28 cents, so the total cost of apples is (28a) cents.
+- The total number of fruits is 8, so we have the equation: (g + k + a = 8).
+- The sum of the prices is 345 cents, so we have the equation: (30g + 51k + 28a = 345).
+We can solve this system of equations to find the values of (g), (k), and (a). Let's proceed:
+From the first equation, we can express (a) in terms of (g) and (k):
+[ a = 8 - g - k ]
+Substitute this expression for (a) into the second equation:
+[ 30g + 51k + 28(8 - g - k) = 345 ]
+Solving for (k):
+[ 30g + 51k + 224 - 28g - 28k = 345 ]
+[ 23k = 121 ]
+[ k = 5 ]
+Now, find the value of (g):
+[ g + 5 + a = 8 ]
+[ g + a = 3 ]
+[ g + (8 - g - 5) = 3 ]
+[ g = 2 ]
+Finally, calculate the value of (a):
+[ a = 8 - g - k = 8 - 2 - 5 = 1 ]
+Therefore, the shopper buys 2 grapes, 5 kiwifruits, and 1 apple. 🍇🥝🍎

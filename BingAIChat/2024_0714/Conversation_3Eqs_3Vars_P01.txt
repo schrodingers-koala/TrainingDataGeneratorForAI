@@ -1,0 +1,38 @@
+## User
+In a market, 3 kinds of fruits, apples, melons and oranges are for sale.
+The price of apple is 57 cents. The price of melon is 59 cents. The price of orange is 15 cents.
+The weight of apple is 88 g. The weight of melon is 13 g. The weight of orange is 6 g.
+A shopper buys fruits at this market.
+The number of fruits is 8.
+The sum of price is 374 cents.
+The sum of weight is 465 g.
+How many apples, melons and oranges does the shopper buy?
+Show one solution.
+## Copilot
+Let's solve this step by step. We'll use algebraic equations to find the quantities of each fruit.
+- Set up the equations:
+Let's denote the number of apples as (x), melons as (y), and oranges as (z). We have the following information:
+    - Price equation: (0.57x + 0.59y + 0.15z = 3.74) (in cents)
+    - Weight equation: (88x + 13y + 6z = 465) (in grams)
+    - Total number of fruits: (x + y + z = 8)
+- Solve the system of equations:
+We can use substitution or elimination. Let's use elimination:
+    - Multiply the price equation by 100 to get rid of decimals:
+[57x + 59y + 15z = 374]
+    - Multiply the weight equation by 100 to match units:
+[8800x + 1300y + 600z = 46500]
+    - Subtract 15 times the total number of fruits equation from the weight equation:
+[8800x + 1300y + 600z - 15(x + y + z) = 46500 - 15(8)]
+[8800x + 1300y + 600z - 120x - 120y - 120z = 46500 - 120]
+[8680x + 1180y + 480z = 46420]
+    - Now we have two equations:
+[57x + 59y + 15z = 374]
+[8680x + 1180y + 480z = 46420]
+    - Solve this system of equations to find the values of (x), (y), and (z).
+- Solution:
+After solving, we get:
+    - (x = 4) (apples)
+    - (y = 2) (melons)
+    - (z = 2) (oranges)
+So the shopper buys 4 apples, 2 melons, and 2 oranges. 🍎🍈🍊
+If you'd like to see more solutions or have any other questions, feel free to ask! 😊

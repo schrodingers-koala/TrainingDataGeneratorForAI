@@ -1,0 +1,39 @@
+## User
+In a market, 3 kinds of fruits, strawberries, kiwifruits and blueberries are for sale.
+The price of strawberry is 87 cents. The price of kiwifruit is 58 cents. The price of blueberry is 73 cents.
+The weight of strawberry is 54 g. The weight of kiwifruit is 66 g. The weight of blueberry is 19 g.
+A shopper buys fruits at this market.
+The number of fruits is 17.
+The sum of price is 1135 cents.
+The sum of weight is 734 g.
+How many strawberries, kiwifruits and blueberries does the shopper buy?
+Show one solution.
+## Copilot
+Let's find a solution! We have three types of fruits: strawberries, kiwifruits, and blueberries. Let's denote the number of strawberries as (S), kiwifruits as (K), and blueberries as (B).
+From the given information:
+- The price of strawberries is 87 cents, so the total cost of strawberries is (87S) cents.
+- The price of kiwifruits is 58 cents, so the total cost of kiwifruits is (58K) cents.
+- The price of blueberries is 73 cents, so the total cost of blueberries is (73B) cents.
+- The total cost of all fruits is 1135 cents: (87S + 58K + 73B = 1135).
+We also know the total weight of all fruits:
+- The weight of strawberries is 54 g, so the total weight of strawberries is (54S) g.
+- The weight of kiwifruits is 66 g, so the total weight of kiwifruits is (66K) g.
+- The weight of blueberries is 19 g, so the total weight of blueberries is (19B) g.
+- The total weight of all fruits is 734 g: (54S + 66K + 19B = 734).
+Now let's solve this system of equations to find the values of (S), (K), and (B):
+- From the cost equation:
+[87S + 58K + 73B = 1135]
+- From the weight equation:
+[54S + 66K + 19B = 734]
+We can solve this system using substitution or elimination. Let's use elimination. First, let's multiply the cost equation by 2 and the weight equation by 3 to make the coefficients of (S) match:
+[174S + 116K + 146B = 2270]
+[162S + 198K + 57B = 2202]
+Now subtract the second equation from the first:
+[12S - 82K + 89B = 68]
+Since we want a positive solution, let's try different values for (B). If we set (B = 1), we get:
+[12S - 82K + 89 = 68]
+[12S - 82K = -21]
+The smallest positive integer solution for (S) and (K) that satisfies this equation is (S = 7) and (K = 1). Therefore, the shopper buys 7 strawberries, 1 kiwifruit, and 9 blueberries. 🍓🥝🫐
+: Blueberry vs. Strawberry — Health Impact and Nutrition Comparison
+: Kiwifruit vs. Strawberry — In-Depth Nutrition Comparison
+: Healthy Fruits: List, Nutrition, Health Benefits

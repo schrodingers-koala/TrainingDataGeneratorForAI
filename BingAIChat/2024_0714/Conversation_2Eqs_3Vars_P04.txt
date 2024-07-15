@@ -1,0 +1,42 @@
+## User
+In a market, 3 kinds of fruits, oranges, apples and strawberries are for sale.
+The price of orange is 42 cents. The price of apple is 50 cents. The price of strawberry is 55 cents.
+A shopper buys fruits at this market.
+The number of fruits is 14.
+The sum of price is 652 cents.
+How many oranges, apples and strawberries does the shopper buy?
+Show one solution.
+## Copilot
+Let's denote the number of oranges, apples, and strawberries bought by the shopper as (o), (a), and (s), respectively. We can set up a system of equations based on the given information:
+- The total number of fruits bought is 14:
+[ o + a + s = 14 ]
+- The total cost of the fruits is 652 cents:
+[ 42o + 50a + 55s = 652 ]
+Now let's solve this system of equations. We'll use the elimination method.
+First, let's multiply the first equation by 42 to make the coefficients of (o) match:
+[ 42(o + a + s) = 42 \cdot 14 ]
+[ 42o + 42a + 42s = 588 ]
+Next, subtract the second equation from this modified first equation:
+[ (42o + 42a + 42s) - (42o + 50a + 55s) = 588 - 652 ]
+[ -8a - 13s = -64 ]
+Now let's multiply the first equation by 50 to make the coefficients of (a) match:
+[ 50(o + a + s) = 50 \cdot 14 ]
+[ 50o + 50a + 50s = 700 ]
+Add the third equation to this modified first equation:
+[ (50o + 50a + 50s) + (50o + 55s) = 700 + 55s ]
+[ 100o + 105s = 700 + 55s ]
+[ 100o = 700 ]
+[ o = 7 ]
+Now we can find the values of (a) and (s):
+[ -8a - 13s = -64 ]
+[ -8a = -64 + 13s ]
+[ a = 8 - \frac{13}{8}s ]
+Since the number of fruits is a whole number, let's check possible values for (s). We find that when (s = 2), (a = 1) (which is a whole number).
+Therefore, the solution is:
+- Oranges: 7
+- Apples: 1
+- Strawberries: 2
+The shopper buys 7 oranges, 1 apple, and 2 strawberries.
+## Copilot
+fruit prices system of equations
+https://www.bing.com/search?IG=AAC449C3C047433EB1D6E8835CFE01D0&IID=SERP.5018&cw=1155&ch=862&dissrchswrite=1&lightschemeovr=1&kseed=16000&SFX=19&partnerId=bingchat&tone=Balanced&q=fruit+prices+system+of+equations&iframeid=14d5b84c-c203-4d84-abc5-a0d4fab283b0

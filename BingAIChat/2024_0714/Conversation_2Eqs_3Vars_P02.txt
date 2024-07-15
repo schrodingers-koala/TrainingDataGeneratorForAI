@@ -1,0 +1,40 @@
+## User
+In a market, 3 kinds of fruits, strawberries, oranges and apples are for sale.
+The price of strawberry is 94 cents. The price of orange is 32 cents. The price of apple is 91 cents.
+A shopper buys fruits at this market.
+The number of fruits is 11.
+The sum of price is 476 cents.
+How many strawberries, oranges and apples does the shopper buy?
+Show one solution.
+## Copilot
+Certainly! Let's find a solution. We'll denote the number of strawberries as (s), the number of oranges as (o), and the number of apples as (a).
+We have the following information:
+- The price of a strawberry is 94 cents: (94s).
+- The price of an orange is 32 cents: (32o).
+- The price of an apple is 91 cents: (91a).
+- The total number of fruits is 11: (s + o + a = 11).
+- The sum of the prices is 476 cents: (94s + 32o + 91a = 476).
+We can set up a system of equations:
+[
+\begin{align*}
+s + o + a &= 11 \
+94s + 32o + 91a &= 476
+\end{align*}
+]
+Let's solve this system of equations. First, we can express (s) in terms of (o) and (a):
+[ s = 11 - o - a ]
+Substitute this expression for (s) into the second equation:
+[ 94(11 - o - a) + 32o + 91a = 476 ]
+Solving for (o):
+[ 94 \cdot 11 - 94o - 94a + 32o + 91a = 476 ]
+[ 1038 - 62o - 3a = 476 ]
+[ 62o + 3a = 562 ]
+Now let's express (o) in terms of (a):
+[ o = \frac{562 - 3a}{62} ]
+Since the number of fruits must be a whole number, we'll check integer values of (a) that satisfy the equation. Let's start with (a = 1):
+[ o = \frac{562 - 3 \cdot 1}{62} = 9 ]
+Now calculate the number of strawberries:
+[ s = 11 - o - a = 11 - 9 - 1 = 1 ]
+And the number of apples:
+[ a = 1 ]
+So the shopper buys 1 strawberry, 9 oranges, and 1 apple. 🍓🍊🍎
