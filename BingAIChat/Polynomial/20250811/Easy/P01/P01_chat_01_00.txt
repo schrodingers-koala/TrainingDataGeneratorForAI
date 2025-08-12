@@ -1,0 +1,2 @@
+Your answer is not collect. Please show me a corrent answer.
+Reason: Your solution is not a polynomial: c**6*(2*... - 137180672*c**12 - 725760)/(64*(... - 1792*b - 4032*c + 1120))

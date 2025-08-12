@@ -1,0 +1,2 @@
+Your answer is not collect. Please show me a corrent answer.
+Reason: Your solution is not a polynomial: c**5*(2*... - 1266492192*c**12 + 835920)/(32*(... - 35560*c**12 - 28936*c**9 - 760))

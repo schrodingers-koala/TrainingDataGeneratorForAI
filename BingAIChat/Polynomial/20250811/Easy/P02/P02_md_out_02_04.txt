@@ -1,0 +1,91 @@
+Copilot said
+------------
+
+Self-Contained Sympy Script (no `solve_flag`)
+=============================================
+
+Below is a standalone Python script that builds the rational function, imposes the constraints symbolically, eliminates the square root, and returns a polynomial in `c`. It does not use `solve_flag` at all.
+
+python
+
+Copy
+
+```
+import sympy as sp
+
+# 1. Declare symbols and build numerator and denominator
+a, b, c = sp.symbols('a b c')
+num = (
+    32*a**13*b**11*c**7
+    + 64*a**10*b**6*c**10
+    + 128*a**10*b**4*c**4
+    + 32*a**9*b**14*c**9
+    + 456*a**9*b**5*c**4
+    + 64*a**6*b**9*c**12
+    + 128*a**6*b**7*c**6
+    + 456*a**5*b**8*c**6
+)
+den = (
+    4*a**5*b**7*c**3
+    + 8*a**2*b**2*c**6
+    - 57*a*c
+    - 16*b**2
+    - 57*b*c
+    - 16*c**2
+    - sp.Rational(43, 2)
+)
+expr = num/den
+
+# 2. Encode the constraints:
+#    a + b + c = 1
+#    a*(1 - a) = (c - 2)**2 / 7
+D = 7 + 2*c - 3*c**2
+sqrtD = sp.sqrt(D)
+
+# 3. Solve for a and b in terms of c (one branch shown)
+a1 = (1 - c + sqrtD)/2
+b1 = 1 - c - a1
+
+# 4. Substitute, clear radicals, and expand
+subs_expr = expr.subs({a: a1, b: b1})
+rad_free  = sp.radsimp(subs_expr)
+poly_c    = sp.expand(rad_free)
+
+# 5. (Optional) check degree and coefficients
+poly = sp.Poly(poly_c, c)
+degree = poly.degree()
+coeffs = poly.all_coeffs()
+
+print("Polynomial in c:", poly_c)
+print("Degree:", degree)
+print("Coefficients (highest→lowest):", coeffs)
+
+```
+
+Explanation of Key Steps
+------------------------
+
+* We never invoke NumPy or floating-point fitting, so there’s no mixed-type conversion issue.
+* The discriminant `D = 7 + 2c − 3c²` and its square-root are kept symbolic.
+* `sp.radsimp` systematically removes any remaining square-root factors, yielding a purely rational expression.
+* `sp.expand` finally writes that rational expression as a polynomial in `c`.
+
+Next Directions
+---------------
+
+* To verify both solution branches, repeat the substitution with
+
+  python
+
+  Copy
+
+  ```
+  a2 = (1 - c - sqrtD)/2
+  b2 = 1 - c - a2
+
+  ```
+
+  and confirm `poly_c` is identical.
+* Factor the polynomial via `sp.factor(poly_c)` to inspect irreducible parts.
+* If you still need a numeric check, sample a few random admissible `c`-values and compare `num/den` vs. `poly_c.subs(c, value)`.
+

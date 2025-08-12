@@ -1,0 +1,54 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+
+    # symbols
+    a, b, t = sp.symbols('a b t')
+    c = 1 - a - b
+
+    # substitute c = 1 - a - b into numerator and denominator
+    f = (12*a**9*b**6*c**8
+         + 30*a**8*b**6*c**9
+         + 600*a**7*b**2*c**2
+         + 4*a**6*b**10*c**13
+         + 198*a**6*b**3*c**2
+         + 10*a**5*b**10*c**14
+         + 200*a**4*b**6*c**7
+         + 66*a**3*b**7*c**7)
+    g = (2*a**4*b**4*c**6
+         + 5*a**3*b**4*c**7
+         - 33*a*c
+         - 100*b**2
+         - 33*b*c
+         - 100*c**2
+         + sp.Rational(701, 2))
+
+    # single quadratic constraint in a, b
+    h = a**2 + b**2 + c**2 - 4
+
+    # eliminate b and a to isolate t = f/g via a lex Groebner basis
+    G = sp.groebner([h, f - t*g],
+                    b, a, t,
+                    order='lex',
+                    domain=sp.QQ,
+                    method='f5b')
+
+    # find the linear polynomial in t in the elimination basis
+    for poly in G.polynomials:
+        if poly.as_poly(t) and sp.degree(poly, t) == 1:
+            A, B = sp.Poly(poly, t).all_coeffs()
+            return sp.expand(-B/A)
+
+    raise ValueError("No linear factor in t found")
+
+```
+

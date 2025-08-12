@@ -1,0 +1,53 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+
+    # declare symbols
+    a, b = sp.symbols('a b')
+    c = 1 - a - b
+
+    # original numerator and denominator with c substituted
+    f = (12*a**9*b**6*c**8
+         + 30*a**8*b**6*c**9
+         + 600*a**7*b**2*c**2
+         + 4*a**6*b**10*c**13
+         + 198*a**6*b**3*c**2
+         + 10*a**5*b**10*c**14
+         + 200*a**4*b**6*c**7
+         + 66*a**3*b**7*c**7)
+
+    g = (2*a**4*b**4*c**6
+         + 5*a**3*b**4*c**7
+         - 33*a*c
+         - 100*b**2
+         - 33*b*c
+         - 100*c**2
+         + sp.Rational(701, 2))
+
+    # substitute relation c = 1 - a - b into the second constraint
+    h = a**2 + b**2 + c**2 - 4
+
+    # introduce a new symbol for the quotient
+    t = sp.symbols('t')
+
+    # eliminate a, b by building a lex Groebner basis for [h, t*g - f]
+    G = sp.groebner([h, t*g - f], a, b, t, order='lex')
+
+    # pick off the polynomial in the basis that involves t
+    rel = next(p for p in G if t in p.free_symbols)
+
+    # solve rel = 0 for t and expand the first (only) solution
+    sol = sp.solve(rel, t)[0]
+    return sp.expand(sol)
+
+```
+

@@ -1,0 +1,2 @@
+Your answer is not collect. Please show me a corrent answer.
+Reason: Your solution is not a polynomial: 2*...*c**5/(... + 75*a**2 - 84*c - 134)

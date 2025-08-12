@@ -1,0 +1,2 @@
+Your answer is not collect. Please show me a corrent answer.
+Reason: Your solution is not a polynomial: ... - 7245951505159*c**5/4608 - 15031249526819*c**4/12096 - 34836378575017680890291953125*c**3/(11474745856649510400 - 3275130210236236800*sqrt(78)*I) - 595932455395*c/168

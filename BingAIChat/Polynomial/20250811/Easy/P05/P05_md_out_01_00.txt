@@ -1,0 +1,58 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+
+    # declare symbols
+    a, b, c = sp.symbols('a b c')
+
+    # numerator
+    f = (12*a**9*b**6*c**8
+         + 30*a**8*b**6*c**9
+         + 600*a**7*b**2*c**2
+         + 4*a**6*b**10*c**13
+         + 198*a**6*b**3*c**2
+         + 10*a**5*b**10*c**14
+         + 200*a**4*b**6*c**7
+         + 66*a**3*b**7*c**7)
+
+    # denominator (clear the 701/2 by multiplying through by 2)
+    g2 = (4*a**4*b**4*c**6
+          + 10*a**3*b**4*c**7
+          - 66*a*c
+          - 200*b**2
+          - 66*b*c
+          - 200*c**2
+          + 701)
+
+    # the two constraints
+    eqs = [a + b + c - 1,
+           a**2 + b**2 + c**2 - 4]
+
+    # build a Groebner basis for eliminating nothing in particular
+    G = sp.groebner(eqs, a, b, c, order='lex')
+
+    # reduce numerator and denominator modulo the ideal (eqs)
+    f_red = G.reduce(f)[1]
+    g_red = G.reduce(g2)[1]
+
+    # perform a multivariate polynomial division
+    Q, R = sp.div(f_red, g_red, a, b, c)
+
+    # ensure exact division
+    if R != 0:
+        raise ValueError("f is not exactly divisible by g2 modulo the constraints")
+
+    # Q is the desired polynomial
+    return sp.expand(Q)
+
+```
+

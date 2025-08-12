@@ -1,0 +1,13 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 1
+poly = 5*a**3*b**3*c**6*(a**4*b**5 + c)
+
+```
+

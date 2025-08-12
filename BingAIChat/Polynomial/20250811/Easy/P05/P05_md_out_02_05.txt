@@ -1,0 +1,63 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+
+    # define symbols
+    a, b, c, t = sp.symbols('a b c t')
+
+    # numerator
+    f = (
+        12*a**9*b**6*c**8
+        + 30*a**8*b**6*c**9
+        + 600*a**7*b**2*c**2
+        + 4*a**6*b**10*c**13
+        + 198*a**6*b**3*c**2
+        + 10*a**5*b**10*c**14
+        + 200*a**4*b**6*c**7
+        + 66*a**3*b**7*c**7
+    )
+
+    # denominator
+    g = (
+        2*a**4*b**4*c**6
+        + 5*a**3*b**4*c**7
+        - 33*a*c
+        - 100*b**2
+        - 33*b*c
+        - 100*c**2
+        + sp.Rational(701, 2)
+    )
+
+    # constraints
+    eq1 = a + b + c - 1
+    eq2 = a**2 + b**2 + c**2 - 4
+
+    # build an elimination Groebner basis to eliminate a,b,c and isolate t = f/g
+    G = sp.groebner(
+        [eq1, eq2, f - t*g],
+        a, b, c, t,
+        order='lex',
+        method='buchberger_ffgb',
+        domain=sp.QQ
+    )
+
+    # search for the univariate linear polynomial in t
+    for poly in G:
+        if poly.is_polynomial(t) and sp.degree(poly, t) == 1:
+            # poly = A*t + B -> t = -B/A
+            A, B = sp.Poly(poly, t).all_coeffs()
+            return -B/A
+
+    raise RuntimeError("No linear factor in t found")
+
+```
+

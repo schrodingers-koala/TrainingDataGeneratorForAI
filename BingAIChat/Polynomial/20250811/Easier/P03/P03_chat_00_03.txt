@@ -1,0 +1,1 @@
+python returns error: AttributeError, module 'sympy' has no attribute 'eliminate'

@@ -1,0 +1,2 @@
+Your answer is not collect. Please show me a corrent answer.
+Reason: (8*a**11*b**13*c**6 + 5*a**10*b**11*c**9 + 32*a**7*b**11*c**8 + 664*a**7*b**6*c**4 + 20*a**6*b**9*c**11 + 464*a**6*b**7*c**4 + 415*a**6*b**4*c**7 + 290*a**5*b**5*c**7)-(a**6*b**7*c**2 + 4*a**2*b**5*c**4 - 58*a*c - 83*b**2 - 58*b*c - 83*c**2 + 245)*(Your solution) = ... - 8*c**30 + 83*c**29 - 330*c**27 != 0.

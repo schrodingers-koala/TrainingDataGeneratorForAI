@@ -1,0 +1,60 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+
+    a, b, c = sp.symbols('a b c')
+
+    # original numerator and denominator
+    N = (2*a**12*b**12*c**9
+         + 3*a**9*b**8*c**11
+         + 2*a**8*b**12*c**8
+         + 56*a**8*b**5*c**7
+         + 70*a**7*b**6*c**7
+         + 3*a**5*b**8*c**10
+         + 56*a**4*b**5*c**6
+         + 70*a**3*b**6*c**6)
+
+    D = (2*a**6*b**7*c**2
+         + 3*a**3*b**3*c**4
+         - 70*a*c
+         - 56*b**2
+         - 70*b*c
+         - 56*c**2
+         + 119)
+
+    # eliminate b via a + b + c = 1  ⇒  b = 1 − c − a
+    b_expr = 1 - c - a
+    N1 = sp.expand(N.subs(b, b_expr))
+    D1 = sp.expand(D.subs(b, b_expr))
+
+    # impose a^2 + b^2 + c^2 = 4
+    # substitute b_expr into that constraint
+    R1 = sp.expand(a**2 + b_expr**2 + c**2 - 4)
+
+    # reduce numerator and denominator modulo R1 (in a)
+    polyN = sp.Poly(N1, a)
+    _, remN = polyN.div(sp.Poly(R1, a))
+
+    polyD = sp.Poly(D1, a)
+    _, remD = polyD.div(sp.Poly(R1, a))
+
+    # remN and remD are at most linear in a: rem = U(c)*a + V(c)
+    remN_poly = sp.Poly(remN, a)
+    remD_poly = sp.Poly(remD, a)
+    U = remN_poly.coeff_monomial(a)
+    W = remD_poly.coeff_monomial(a)
+
+    # the ratio is independent of a, so it equals U(c)/W(c)
+    return sp.expand(U/W)
+
+```
+

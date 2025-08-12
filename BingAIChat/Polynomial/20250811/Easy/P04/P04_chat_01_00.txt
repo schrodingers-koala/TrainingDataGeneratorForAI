@@ -1,0 +1,2 @@
+Your answer is not collect. Please show me a corrent answer.
+Reason: Your solution is not a polynomial: (2*... + 2722815*(-sqrt(6)/2 - 1/2)**7/256 + 4901067*(-sqrt(6)/2 - 1/2)**4/128)/(... - 83*(-sqrt(6)/2 - 1/2)**2 + 87*sqrt(6)/2 + 164)

@@ -1,0 +1,34 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    from sympy import symbols, groebner, Poly, Rational
+    a, b, c, t = symbols('a b c t')
+    f1 = a + b + c - 1
+    f2 = a**2 + b**2 + c**2 - 4
+    numer = (
+        553*a**7*b**7*c**6
+        + 539*a**6*b**8*c**6
+        -   7*a**5*b**7*c**6
+        + 237*a**4*b*c**4
+        + 231*a**3*b**2*c**4
+        -   3*a**2*b*c**4
+    )
+    denom = -77*a*c - 79*b**2 - 77*b*c - 79*c**2 + Rational(399, 2)
+    # Eliminate t with lex order to find P such that denom*P - numer ∈ (f1, f2)
+    G = groebner([f1, f2, denom*t - numer], t, a, b, c, order='lex', domain='QQ')
+    # G[0] will be of the form t - P(a,b,c)
+    g0 = G[0]
+    coeffs = Poly(g0, t).all_coeffs()
+    poly = -coeffs[1]
+    return poly
+
+```
+

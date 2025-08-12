@@ -1,0 +1,7 @@
+
+Simplify (304*a^9*b^5*c + 144*a^8*b^6*c + 456*a^7*b^8*c^8 + 216*a^6*b^9*c^8)/(-36*a*c - 76*b^2 - 36*b*c - 76*c^2 + 250), where a + b + c - 1 = 0, a^2 + b^2 + c^2 - 4 = 0. Please solve the problem and express it with a polynomial.
+For verification of your answer, give me your solution as an python code.
+If you can solve the problem, add "solve_flag = 1" and add "poly=<your solution polynomial>" to the python code.
+Do not add any other code to the python code.
+If you cannot solve the problem, add "solve_flag = 2",
+and solve_problem() function to the python code for solving the problem and returning your solution polynomial by python.

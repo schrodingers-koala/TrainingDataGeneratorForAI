@@ -1,0 +1,2 @@
+Your answer is not collect. Please show me a corrent answer.
+Reason: Your solution is not a polynomial: c*(2*... - 1800016*c**5 - 220644)/(64*(... - 19*b - 28*c + 34))

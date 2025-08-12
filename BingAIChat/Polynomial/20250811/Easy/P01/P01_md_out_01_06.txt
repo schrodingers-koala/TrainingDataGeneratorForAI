@@ -1,0 +1,43 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+    a, b, c, x = sp.symbols('a b c x')
+    N = (2*a**12*b**12*c**9 +
+         3*a**9*b**8*c**11 +
+         2*a**8*b**12*c**8 +
+         56*a**8*b**5*c**7 +
+         70*a**7*b**6*c**7 +
+         3*a**5*b**8*c**10 +
+         56*a**4*b**5*c**6 +
+         70*a**3*b**6*c**6)
+    D = (2*a**6*b**7*c**2 +
+         3*a**3*b**3*c**4 -
+         70*a*c -
+         56*b**2 -
+         70*b*c -
+         56*c**2 +
+         119)
+
+    # first eliminate a by taking resultant w.r.t. a
+    R1 = sp.resultant(N - x*D, a + b + c - 1, a)
+
+    # next eliminate b by taking resultant of R1 w.r.t. b
+    R2 = sp.resultant(R1, a**2 + b**2 + c**2 - 4, b)
+
+    # R2(c, x) is (generically) linear in x, so solve for x
+    poly = sp.Poly(R2, x)
+    sol = -poly.coeff_monomial(x**0) / poly.coeff_monomial(x**1)
+
+    return sp.simplify(sol)
+
+```
+

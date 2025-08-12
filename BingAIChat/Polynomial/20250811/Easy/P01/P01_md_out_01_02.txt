@@ -1,0 +1,55 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+    a, b, c = sp.symbols('a b c')
+    N = (2*a**12*b**12*c**9 +
+         3*a**9*b**8*c**11 +
+         2*a**8*b**12*c**8 +
+         56*a**8*b**5*c**7 +
+         70*a**7*b**6*c**7 +
+         3*a**5*b**8*c**10 +
+         56*a**4*b**5*c**6 +
+         70*a**3*b**6*c**6)
+    D = (2*a**6*b**7*c**2 +
+         3*a**3*b**3*c**4 -
+         70*a*c -
+         56*b**2 -
+         70*b*c -
+         56*c**2 +
+         119)
+    # build the ideal from the constraints
+    eqs = [a + b + c - 1, a**2 + b**2 + c**2 - 4]
+    G = sp.groebner(eqs, a, b, c, order='lex')
+    # ansatz: polynomial in c of degree ≤ 18
+    n = 18
+    k = sp.symbols(f'k0:{n+1}')
+    P = sum(k[i] * c**i for i in range(n+1))
+    # remainder of N - D*P modulo the ideal must be zero
+    Rem = G.reduce(N - D*P)[1]
+    rem_poly = sp.Poly(Rem, a, b, c)
+    # collect linear equations: all coefficients of monomials
+    # containing a or b must vanish
+    eqs2 = [
+        coeff for (exp_a, exp_b, exp_c), coeff
+        in rem_poly.as_dict().items()
+        if exp_a != 0 or exp_b != 0
+    ]
+    sol = sp.solve(eqs2, k, dict=True)
+    if not sol:
+        raise ValueError("no solution for ansatz")
+    sol = sol[0]
+    # reconstruct the polynomial in c
+    Psol = sum(sol[k[i]] * c**i for i in range(n+1))
+    return sp.expand(Psol)
+
+```
+

@@ -1,0 +1,64 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+
+    # one‐variable parametrization via eliminating c then b
+    a = sp.symbols('a')
+    b, c = sp.symbols('b c')
+
+    # original numerator and denominator
+    f = (12*a**9*b**6*c**8
+         + 30*a**8*b**6*c**9
+         + 600*a**7*b**2*c**2
+         + 4*a**6*b**10*c**13
+         + 198*a**6*b**3*c**2
+         + 10*a**5*b**10*c**14
+         + 200*a**4*b**6*c**7
+         + 66*a**3*b**7*c**7)
+    g = (2*a**4*b**4*c**6
+         + 5*a**3*b**4*c**7
+         - 33*a*c
+         - 100*b**2
+         - 33*b*c
+         - 100*c**2
+         + sp.Rational(701, 2))
+
+    # substitute c = 1 - a - b from a + b + c = 1
+    c_sub = 1 - a - b
+
+    # solve a^2 + b^2 + c^2 = 4 for b: 2a^2+2b^2+2ab-2a-2b-3=0
+    disc = -3*a**2 + 2*a + 7
+    b_solutions = [
+        (1 - a + sp.sqrt(disc)) / 2,
+        (1 - a - sp.sqrt(disc)) / 2
+    ]
+
+    # evaluate f/g on both branches, ensure sqrt cancels
+    P = None
+    for b_val in b_solutions:
+        c_val = c_sub.subs(b, b_val)
+        num = f.subs({b: b_val, c: c_val})
+        den = g.subs({b: b_val, c: c_val})
+        val = sp.simplify(num/den)
+        if P is None:
+            P = val
+        else:
+            if not sp.simplify(P - val) == 0:
+                raise ValueError("Branch mismatch")
+
+    # P is the desired polynomial in a; lift back to a,b,c via c=1-a-b
+    poly = sp.expand(P.subs(a, a))  # already in 'a' only
+
+    return poly
+
+```
+

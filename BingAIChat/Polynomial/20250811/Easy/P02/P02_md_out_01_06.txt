@@ -1,0 +1,52 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+    a, b, c, t = sp.symbols('a b c t')
+
+    # original numerator and denominator
+    num = (32*a**13*b**11*c**7
+           + 64*a**10*b**6*c**10
+           + 128*a**10*b**4*c**4
+           + 32*a**9*b**14*c**9
+           + 456*a**9*b**5*c**4
+           + 64*a**6*b**9*c**12
+           + 128*a**6*b**7*c**6
+           + 456*a**5*b**8*c**6)
+    den = (4*a**5*b**7*c**3
+           + 8*a**2*b**2*c**6
+           - 57*a*c
+           - 16*b**2
+           - 57*b*c
+           - 16*c**2
+           - sp.Rational(43, 2))
+
+    # build the elimination ideal for t = num/den under the constraints
+    eqs = [
+        a + b + c - 1,
+        a**2 + b**2 + c**2 - 4,
+        num - t*den
+    ]
+    G = sp.groebner(eqs, a, b, c, t, order='lex', domain=sp.QQ)
+
+    # pick off the polynomial in t (with parameters a,b,c)
+    for poly in G.polynomials:
+        if t in poly.free_symbols and all(v in (a, b, c, t) for v in poly.free_symbols):
+            # try to solve poly = 0 for t
+            sol_t = sp.solve(poly, t)
+            if sol_t:
+                # return the first branch as the simplified expression
+                return sp.simplify(sol_t[0])
+
+    raise ValueError("could not isolate t")
+
+```
+

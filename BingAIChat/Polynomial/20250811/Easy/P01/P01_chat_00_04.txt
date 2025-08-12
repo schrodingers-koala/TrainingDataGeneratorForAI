@@ -1,0 +1,1 @@
+python returns error: MultivariatePolynomialError, 'list' representation not supported

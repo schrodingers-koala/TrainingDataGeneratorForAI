@@ -1,0 +1,42 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+    a, b, c = sp.symbols('a b c')
+    
+    # express a,b in terms of c via the two constraints
+    D = 7 + 2*c - 3*c**2
+    w = sp.sqrt(D)
+    a_ex = (1 - c + w)/2
+    b_ex = (1 - c - w)/2
+
+    num = (
+        32*a**13*b**11*c**7 + 64*a**10*b**6*c**10 + 128*a**10*b**4*c**4
+        + 32*a**9*b**14*c**9 + 456*a**9*b**5*c**4
+        + 64*a**6*b**9*c**12 + 128*a**6*b**7*c**6 + 456*a**5*b**8*c**6
+    )
+    den = (
+        4*a**5*b**7*c**3 + 8*a**2*b**2*c**6 - 57*a*c
+        - 16*b**2 - 57*b*c - 16*c**2 - sp.Rational(43, 2)
+    )
+
+    # substitute the parametrization and simplify
+    F = sp.simplify(num.subs({a: a_ex, b: b_ex}) /
+                    den.subs({a: a_ex, b: b_ex}))
+
+    # clear any leftover square‐root and expand to a polynomial in c
+    Fr = sp.radsimp(F)
+    poly = sp.expand(Fr)
+
+    return poly
+
+```
+

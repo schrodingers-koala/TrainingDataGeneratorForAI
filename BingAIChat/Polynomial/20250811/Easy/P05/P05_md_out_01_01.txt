@@ -1,0 +1,51 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+
+    # symbols
+    a, b = sp.symbols('a b')
+    c = 1 - a - b
+
+    # numerator
+    f = (12*a**9*b**6*c**8
+         + 30*a**8*b**6*c**9
+         + 600*a**7*b**2*c**2
+         + 4*a**6*b**10*c**13
+         + 198*a**6*b**3*c**2
+         + 10*a**5*b**10*c**14
+         + 200*a**4*b**6*c**7
+         + 66*a**3*b**7*c**7)
+
+    # denominator cleared of 701/2
+    g2 = (4*a**4*b**4*c**6
+          + 10*a**3*b**4*c**7
+          - 66*a*c
+          - 200*b**2
+          - 66*b*c
+          - 200*c**2
+          + 701)
+
+    # single quadratic constraint after c-substitution
+    h = a**2 + b**2 + c**2 - 4
+
+    # build a Groebner basis to reduce with respect to h only
+    G = sp.groebner([h], b, a, order='lex')
+
+    # reduce numerator and denominator
+    f_red = G.reduce(f)[1]
+    g_red = G.reduce(g2)[1]
+
+    # return the simplified rational form (no further denominator elimination possible)
+    return sp.simplify(f_red / g_red)
+
+```
+

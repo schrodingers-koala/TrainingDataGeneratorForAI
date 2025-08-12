@@ -1,0 +1,38 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+
+    a, b, c = sp.symbols('a b c')
+    num = (32*a**13*b**11*c**7 + 64*a**10*b**6*c**10 + 128*a**10*b**4*c**4
+           + 32*a**9*b**14*c**9 + 456*a**9*b**5*c**4
+           + 64*a**6*b**9*c**12 + 128*a**6*b**7*c**6 + 456*a**5*b**8*c**6)
+    den = (4*a**5*b**7*c**3 + 8*a**2*b**2*c**6 - 57*a*c
+           - 16*b**2 - 57*b*c - 16*c**2 - sp.Rational(43, 2))
+
+    # sample integer c-values, solve for a, pick non‐singular branch, interpolate
+    data = []
+    for cs in range(-5, 6):
+        eq = a**2 + (1 - a - cs)**2 + cs**2 - 4
+        sols = sp.solve(eq, a)
+        for sol in sols:
+            bsol = 1 - sol - cs
+            dval = den.subs({a: sol, b: bsol, c: cs})
+            if dval != 0:
+                rval = sp.nsimplify(num.subs({a: sol, b: bsol, c: cs})/dval)
+                data.append((cs, rval))
+                break
+
+    poly = sp.interpolate(data, c)
+    return sp.expand(poly)
+
+```
+

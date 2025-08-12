@@ -1,0 +1,3 @@
+python returns error: CoercionFailed, expected an integer, got 701/2
+Keep in mind the following.
+If you can solve the problem, add "solve_flag = 1" and add "poly=<your solution polynomial>" to the python code. Do not add any other code to the python code. If you cannot solve the problem, add "solve_flag = 2", and solve_problem() function to the python code for solving the problem and returning your solution polynomial by python.

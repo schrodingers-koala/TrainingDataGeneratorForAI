@@ -1,0 +1,31 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+    a, b, c, Q = sp.symbols('a b c Q')
+    # original expression components
+    expr_num = 304*a**9*b**5*c + 144*a**8*b**6*c + 456*a**7*b**8*c**8 + 216*a**6*b**9*c**8
+    expr_den = -36*a*c - 76*b**2 - 36*b*c - 76*c**2 + 250
+    # constraint polynomials
+    f1 = a + b + c - 1
+    f2 = a**2 + b**2 + c**2 - 4
+    # build Groebner basis for elimination in lex order with Q > a,b,c
+    G = sp.groebner([f1, f2, expr_den*Q - expr_num], Q, a, b, c, order='lex')
+    # the first basis element G[0] is linear in Q: L*Q + M = 0
+    poly_in_Q = G[0]
+    P = sp.Poly(poly_in_Q, Q)
+    # solve for Q: Q = -M/L
+    L, M = P.coeffs()
+    poly = -M/L
+    return poly
+
+```
+

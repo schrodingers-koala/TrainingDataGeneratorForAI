@@ -1,0 +1,50 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+
+    a, b, c = sp.symbols('a b c')
+    # original numerator
+    f = (12*a**9*b**6*c**8
+         + 30*a**8*b**6*c**9
+         + 600*a**7*b**2*c**2
+         + 4*a**6*b**10*c**13
+         + 198*a**6*b**3*c**2
+         + 10*a**5*b**10*c**14
+         + 200*a**4*b**6*c**7
+         + 66*a**3*b**7*c**7)
+    # multiply denominator by 2 to clear the 701/2
+    g2 = (4*a**4*b**4*c**6
+          + 10*a**3*b**4*c**7
+          - 66*a*c
+          - 200*b**2
+          - 66*b*c
+          - 200*c**2
+          + 701)
+
+    # constraints
+    eq1 = a + b + c - 1
+    eq2 = a**2 + b**2 + c**2 - 4
+
+    # build Groebner basis for eq1, eq2
+    G = sp.groebner([eq1, eq2], a, b, c, order='lex')
+
+    # reduce f and g2 modulo the ideal (eq1, eq2)
+    f_red = G.reduce(f)[1]
+    g2_red = G.reduce(g2)[1]
+
+    # the quotient f/g equals (2*f)/(2*g) = f_red/g2_red under the ideal
+    sol = sp.simplify(f_red / g2_red)
+
+    return sp.expand(sol)
+
+```
+

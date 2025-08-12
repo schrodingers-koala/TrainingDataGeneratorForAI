@@ -1,0 +1,1 @@
+python returns error: AttributeError, 'GroebnerBasis' object has no attribute 'eliminate'

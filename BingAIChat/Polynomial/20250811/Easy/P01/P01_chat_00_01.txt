@@ -1,0 +1,1 @@
+python returns error: TypeError, unsupported operand type(s) for /: 'list' and 'list'

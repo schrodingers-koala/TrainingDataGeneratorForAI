@@ -1,0 +1,74 @@
+Copilot said
+------------
+
+Pure Symbolic Simplification via radsimp
+========================================
+
+Below is a fully symbolic method that avoids any floating-point fitting and thus evades the `np.float64` conversion error altogether. We substitute the two roots for `a, b` in terms of `c`, apply `radsimp` to eliminate the square-root, and then expand to get a polynomial in `c`.
+
+python
+
+Copy
+
+```
+import sympy as sp
+
+# 1. Declare symbols and build the rational expression
+a, b, c = sp.symbols('a b c')
+num = (32*a**13*b**11*c**7
+       + 64*a**10*b**6*c**10
+       + 128*a**10*b**4*c**4
+       + 32*a**9*b**14*c**9
+       + 456*a**9*b**5*c**4
+       + 64*a**6*b**9*c**12
+       + 128*a**6*b**7*c**6
+       + 456*a**5*b**8*c**6)
+den = (4*a**5*b**7*c**3
+       + 8*a**2*b**2*c**6
+       - 57*a*c
+       - 16*b**2
+       - 57*b*c
+       - 16*c**2
+       - sp.Rational(43, 2))
+expr = num/den
+
+# 2. Solve the linear + quadratic constraint:
+#    a + b + c = 1  
+#    a*(1 - a) = (c - 2)**2/7   ⇒  D = 7 + 2c - 3c^2  
+D = 7 + 2*c - 3*c**2
+sqrtD = sp.sqrt(D)
+
+# 3. Express the two roots for (a,b):
+a1 = (1 - c + sqrtD)/2
+b1 = 1 - c - a1
+
+# 4. Substitute and rationalize
+subs_expr = expr.subs({a: a1, b: b1})
+# eliminate √D from numerator & denominator
+rad_free = sp.radsimp(subs_expr)
+
+# 5. Expand to get the final polynomial in c
+poly_in_c = sp.expand(rad_free)
+
+print(poly_in_c)
+
+```
+
+Why This Works
+--------------
+
+* We never sample numerically nor fit via `polyfit`, so there’s no mixed NumPy/SymPy type mismatch.
+* `sp.radsimp` systematically clears any square‐root factors, guaranteeing a purely rational (hence polynomial) result.
+* The final `expand` then writes it as an explicit polynomial in `c`.
+
+Next Steps
+----------
+
+If you want to
+
+* verify degree and coefficients symbolically, apply `sp.Poly(poly_in_c, c).degree()` or `.all_coeffs()`,
+* derive both branches (using `a1` or `a2 = (1 - c - sqrtD)/2`) and confirm they agree,
+* or factor the resulting polynomial to inspect its irreducible factors,
+
+just let me know!
+

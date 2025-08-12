@@ -1,0 +1,47 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+    a, b, c = sp.symbols('a b c')
+
+    # original numerator and denominator
+    num = (32*a**13*b**11*c**7
+           + 64*a**10*b**6*c**10
+           + 128*a**10*b**4*c**4
+           + 32*a**9*b**14*c**9
+           + 456*a**9*b**5*c**4
+           + 64*a**6*b**9*c**12
+           + 128*a**6*b**7*c**6
+           + 456*a**5*b**8*c**6)
+    den = (4*a**5*b**7*c**3
+           + 8*a**2*b**2*c**6
+           - 57*a*c
+           - 16*b**2
+           - 57*b*c
+           - 16*c**2
+           - sp.Rational(43, 2))
+
+    # build Groebner basis of the two constraints
+    G = sp.groebner([a + b + c - 1, a**2 + b**2 + c**2 - 4],
+                    a, b, c, order='lex')
+
+    # reduce numerator and denominator modulo the ideal
+    n_red = G.reduce(num)[1]
+    d_red = G.reduce(den)[1]
+
+    # form the simplified ratio and reduce to a single polynomial remainder
+    F = sp.simplify(n_red / d_red)
+    H = G.reduce(sp.Poly(F, a, b, c))[1]
+
+    return sp.simplify(H)
+
+```
+

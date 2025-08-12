@@ -1,0 +1,2 @@
+Your answer is not collect. Please show me a corrent answer.
+Reason: Your solution is not a polynomial: 5*c**6*(2*... - 17620736*c**8 + 577368)/(128*(... - 176*b - 222*c + 361))

@@ -1,0 +1,7 @@
+
+Simplify (32*a^12*b^9*c^9 + 40*a^10*b^14*c^7 + 32*a^10*b^10*c^13 + 40*a^8*b^15*c^11 + 148*a^6*b^2*c^7 + 120*a^5*b^3*c^7 + 185*a^4*b^7*c^5 + 150*a^3*b^8*c^5)/(8*a^8*b^7*c^2 + 8*a^6*b^8*c^6 - 30*a*c - 37*b^2 - 30*b*c - 37*c^2 + 103), where a + b + c - 1 = 0, a^2 + b^2 + c^2 - 4 = 0. Please solve the problem and express it with a polynomial.
+For verification of your answer, give me your solution as an python code.
+If you can solve the problem, add "solve_flag = 1" and add "poly=<your solution polynomial>" to the python code.
+Do not add any other code to the python code.
+If you cannot solve the problem, add "solve_flag = 2",
+and solve_problem() function to the python code for solving the problem and returning your solution polynomial by python.

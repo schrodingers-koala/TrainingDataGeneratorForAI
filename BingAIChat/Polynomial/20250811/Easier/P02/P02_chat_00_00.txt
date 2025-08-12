@@ -1,0 +1,7 @@
+
+Simplify (246*a^8*b*c^4 + 123*a^7*b^6*c + 468*a^7*b^2*c^4 + 234*a^6*b^7*c - 6*a^6*b*c^4 - 3*a^5*b^6*c)/(-78*a*c - 41*b^2 - 78*b*c - 41*c^2 + 46), where a + b + c - 1 = 0, a^2 + b^2 + c^2 - 4 = 0. Please solve the problem and express it with a polynomial.
+For verification of your answer, give me your solution as an python code.
+If you can solve the problem, add "solve_flag = 1" and add "poly=<your solution polynomial>" to the python code.
+Do not add any other code to the python code.
+If you cannot solve the problem, add "solve_flag = 2",
+and solve_problem() function to the python code for solving the problem and returning your solution polynomial by python.

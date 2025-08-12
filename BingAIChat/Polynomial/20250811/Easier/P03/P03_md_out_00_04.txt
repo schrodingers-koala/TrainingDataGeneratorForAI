@@ -1,0 +1,53 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+
+    # symbols
+    a, b, c, X = sp.symbols('a b c X')
+
+    # numerator and denominator
+    num = (
+        450*a**9*b**3*c**5
+        + 504*a**8*b**4*c**5
+        - 48*a**7*b**3*c**5
+        + 600*a**6*b**2*c**6
+        + 672*a**5*b**3*c**6
+        - 64*a**4*b**2*c**6
+    )
+    den = -84*a*c - 75*b**2 - 84*b*c - 75*c**2 + 166
+
+    # the two constraints
+    g1 = a + b + c - 1
+    g2 = a**2 + b**2 + c**2 - 4
+
+    # set up the elimination ideal: den*X - num = 0, together with g1 and g2
+    eqs = [g1, g2, den*X - num]
+
+    # compute a lex Groebner basis eliminating a, b, c (X is last)
+    G = sp.groebner(eqs, a, b, c, X, order='lex')
+
+    # extract the univariate polynomial in X from the basis
+    poly_X = None
+    for f in G:
+        if f.free_symbols == {X}:
+            poly_X = f
+            break
+    if poly_X is None:
+        raise ValueError("Failed to eliminate a, b, c")
+
+    # solve the univariate polynomial for X
+    sols = sp.solve(poly_X, X)
+    # return the (unique) solution as a simplified polynomial in (a,b,c)
+    return sp.simplify(sols[0])
+
+```
+

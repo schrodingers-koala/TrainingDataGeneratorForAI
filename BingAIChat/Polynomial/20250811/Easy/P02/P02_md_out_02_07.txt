@@ -1,0 +1,103 @@
+Copilot said
+------------
+
+Direct Polynomial Extraction via Groebner‐Basis Elimination
+===========================================================
+
+Below is a self-contained SymPy script that never introduces a square-root at all. We treat
+
+text
+
+Copy
+
+```
+t = (numerator)/(denominator)
+
+```
+
+as an unknown, impose the three relations
+
+1. num – t·den = 0
+2. a + b + c – 1 = 0
+3. 7·a·(1 – a) – (c – 2)\*\*2 = 0
+   and then eliminate a and b to get a single polynomial in t and c. The result factors linearly in t, giving
+
+text
+
+Copy
+
+```
+t = P(c)
+
+```
+
+where P(c) is the sought-after polynomial.
+
+python
+
+Copy
+
+```
+import sympy as sp
+
+# 1. Declare all symbols including t
+a, b, c, t = sp.symbols('a b c t')
+
+# 2. Build the original numerator and denominator
+num = (
+    32*a**13*b**11*c**7
+  + 64*a**10*b**6*c**10
+  + 128*a**10*b**4*c**4
+  + 32*a**9*b**14*c**9
+  + 456*a**9*b**5*c**4
+  + 64*a**6*b**9*c**12
+  + 128*a**6*b**7*c**6
+  + 456*a**5*b**8*c**6
+)
+den = (
+    4*a**5*b**7*c**3
+  + 8*a**2*b**2*c**6
+  - 57*a*c
+  - 16*b**2
+  - 57*b*c
+  - 16*c**2
+  - sp.Rational(43, 2)
+)
+
+# 3. Define the three constraint‐polynomials
+F1 = num - t*den
+F2 = a + b + c - 1
+F3 = 7*a*(1 - a) - (c - 2)**2
+
+# 4. Compute a lex Groebner basis eliminating a, b first
+G = sp.groebner([F1, F2, F3], a, b, t, c, order='lex')
+
+# 5. Pick off the basis polynomial that no longer involves a or b
+elim = next(poly for poly in G.polys if not (poly.free_symbols & {a, b}))
+
+# 6. Factor in t and solve for t = P(c)
+#    elim will look like A(c)*t + B(c)
+pt = sp.Poly(elim, t)
+A, B = pt.all_coeffs()  # [coeff_of_t, constant_term]
+P_c = sp.simplify(-B/A)
+
+print("Polynomial in c:", P_c)
+print("Degree:", sp.Poly(P_c, c).degree())
+print("Coefficients (high→low):", sp.Poly(P_c, c).all_coeffs())
+
+```
+
+Why This Works
+--------------
+
+* Variables a and b are eliminated symbolically; no square-root ever appears.
+* The lex order Groebner basis computes the elimination ideal in one shot.
+* The surviving polynomial in (t, c) factors linearly in t, so solving for t yields the exact P(c).
+
+Next Steps
+----------
+
+* Verify that substituting random admissible c into both the original expr and P(c) match numerically.
+* Factor P(c) with `sp.factor(P_c)` to inspect irreducible components.
+* If you need the alternate branch for a, repeat with a2 = (1 – c – sqrtD)/2 to confirm consistency.
+

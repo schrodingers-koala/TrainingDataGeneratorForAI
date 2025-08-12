@@ -1,0 +1,47 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+    a, b, c = sp.symbols('a b c')
+    # Parametrize the intersection of a+b+c=1 and a^2+b^2+c^2=4 by letting c be free
+    D = 3 + 2*c - 2*c**2       # discriminant for a,b
+    sqrtD = sp.sqrt(D)
+    # two branches for (a,b), but the ratio will simplify to a single polynomial in c
+    a1 = (1 - c + sqrtD) / 2
+    b1 = (1 - c - sqrtD) / 2
+
+    # original numerator and denominator
+    num = (8*a1**11*b1**13*c**6
+           + 5*a1**10*b1**11*c**9
+           + 32*a1**7*b1**11*c**8
+           + 664*a1**7*b1**6*c**4
+           + 20*a1**6*b1**9*c**11
+           + 464*a1**6*b1**7*c**4
+           + 415*a1**6*b1**4*c**7
+           + 290*a1**5*b1**5*c**7)
+    den = (a1**6*b1**7*c**2
+           + 4*a1**2*b1**5*c**4
+           - 58*a1*c
+           - 83*b1**2
+           - 58*b1*c
+           - 83*c**2
+           + 245)
+
+    # form the ratio and force it to expand into a univariate polynomial in c
+    rat = sp.simplify(num/den)
+    poly_c = sp.Poly(rat.expand(), c).as_expr()
+
+    # rewrite that polynomial in the original variables via c = 1 - a - b
+    poly = sp.simplify(poly_c.subs(c, 1 - a - b))
+    return poly
+
+```
+

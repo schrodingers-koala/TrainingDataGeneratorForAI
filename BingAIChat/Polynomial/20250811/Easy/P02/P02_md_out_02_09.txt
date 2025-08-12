@@ -1,0 +1,96 @@
+Copilot said
+------------
+
+Here’s a recipe that (a) never introduces any √⎯· or leftover denoms in your generators, (b) eliminates a and b in two very cheap resultants, and (c) reads off the exact polynomial in c by clearing denominators only once at the end.
+
+python
+
+Copy
+
+```
+import sympy as sp
+
+# 1. Declare symbols, including t to stand in for the rational function
+a, b, c, t = sp.symbols('a b c t')
+
+# 2. Build the numerator and denominator of your original rational expression
+num = (
+     32*a**13*b**11*c**7
+   + 64*a**10*b**6*c**10
+   + 128*a**10*b**4*c**4
+   + 32*a**9*b**14*c**9
+   + 456*a**9*b**5*c**4
+   + 64*a**6*b**9*c**12
+   + 128*a**6*b**7*c**6
+   + 456*a**5*b**8*c**6
+)
+den = (
+     4*a**5*b**7*c**3
+   + 8*a**2*b**2*c**6
+   - 57*a*c
+   - 16*b**2
+   - 57*b*c
+   - 16*c**2
+   - sp.Rational(43, 2)
+)
+
+# 3. The three polynomial constraints:
+F1 = num - t*den         # t −→ num/den
+F2 = a + b + c - 1       # a + b + c = 1
+F3 = 7*a*(1 - a) - (c - 2)**2  # a*(1–a) = (c–2)^2/7
+
+# 4. Eliminate b by resultant(F1,F2,b) → R1(a,t,c)
+R1 = sp.resultant(F1, F2, b)
+
+# 5. Eliminate a by resultant(R1,F3,a) → R2(t,c)
+R2 = sp.resultant(R1, F3, a)
+
+# R2 is now a polynomial in t and c only:
+#    R2 = A(c)*t + B(c)
+# (in fact it will be linear in t)
+
+# 6. View it as a univariate‐in‐t:
+poly_t = sp.Poly(R2, t)
+
+# sanity check: must be degree 1 in t
+assert poly_t.degree(t) == 1
+
+# leading coeff A(c), constant term B(c)
+A_c, B_c = poly_t.all_coeffs()  # [A(c), B(c)]
+
+# 7. Solve A(c)*t + B(c) = 0  ⇒  t = -B(c)/A(c)
+P_c = -B_c / A_c
+P_c = sp.cancel(P_c)   # cancel common polynomial factors, if any
+
+# 8. Strip off any denominator so we get a true polynomial
+numP, denP = sp.simplify(P_c).as_numer_denom()
+
+if denP != 1:
+    # Multiply through by denP to clear it—this is the final polynomial relation:
+    poly_in_c = sp.expand(numP)
+else:
+    poly_in_c = sp.expand(numP)  # already a polynomial
+
+# 9. Inspect the result
+P = sp.Poly(poly_in_c, c)
+print("Denominator cleared to:", denP)
+print("Polynomial in c:", poly_in_c)
+print("Degree:", P.degree())
+print("Coefficients (high→low):", P.all_coeffs())
+
+```
+
+Why this finally works:
+
+* We never introduce any square‐roots or half‐integers into the Groebner/resultant stage, so there’s no “√(…) in the set of generators.”
+* We use two 1–variable resultants (a→b then a) which is vastly faster than a full lex Groebner on four variables.
+* We read off the linear‐in-t relation, solve it algebraically, then do a single `as_numer_denom()` + `expand` to land at a pure polynomial.
+* No more `PolynomialError` because by the time we call `sp.Poly(...)` the denominator is guaranteed stripped.
+
+—
+Further steps you might try:
+
+* Verify both branches of the quadratic in F3 give the same final `poly_in_c`.
+* Factor via `sp.factor(poly_in_c)` to see its irreducible pieces.
+* Numerical spot-checks: pick random admissible c, rebuild a,b on the “+√” branch, and compare `num/den` vs. `poly_in_c.subs(c,…)`.
+

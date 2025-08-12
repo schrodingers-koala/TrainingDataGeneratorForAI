@@ -1,0 +1,62 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import numpy as np
+    import sympy as sp
+
+    # symbols and original rational function
+    a, b, c = sp.symbols('a b c')
+    num = (32*a**13*b**11*c**7
+           + 64*a**10*b**6*c**10
+           + 128*a**10*b**4*c**4
+           + 32*a**9*b**14*c**9
+           + 456*a**9*b**5*c**4
+           + 64*a**6*b**9*c**12
+           + 128*a**6*b**7*c**6
+           + 456*a**5*b**8*c**6)
+    den = (4*a**5*b**7*c**3
+           + 8*a**2*b**2*c**6
+           - 57*a*c
+           - 16*b**2
+           - 57*b*c
+           - 16*c**2
+           - sp.Rational(43, 2))
+
+    # numeric sampling on the real branch of the constraints
+    xs = []
+    ys = []
+    for cv in np.linspace(-1.2, 1.8, 25):
+        # discriminant under sqrt
+        D = 7 + 2*cv - 3*cv*cv
+        if D < 0:
+            continue
+        w = np.sqrt(D)
+        a1 = (1 - cv + w)/2
+        b1 = 1 - cv - a1
+        dv = float(den.subs({a: a1, b: b1, c: cv}))
+        if abs(dv) < 1e-6:
+            continue
+        fv = float(num.subs({a: a1, b: b1, c: cv}) / den.subs({a: a1, b: b1, c: cv}))
+        xs.append(cv)
+        ys.append(fv)
+        if len(xs) >= 12:
+            break
+
+    # interpolate the exact polynomial
+    coeffs = np.polyfit(xs, ys, len(xs)-1)
+    c_sym = sp.symbols('c')
+    poly = sum(sp.nsimplify(coeffs[i], tol=1e-6) * c_sym**(len(coeffs)-i-1)
+               for i in range(len(coeffs)))
+
+    return sp.expand(poly)
+
+```
+

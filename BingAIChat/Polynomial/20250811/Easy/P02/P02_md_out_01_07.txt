@@ -1,0 +1,53 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    from fractions import Fraction
+    import numpy as np
+    import sympy as sp
+
+    def evalF(c):
+        S = 1 - c
+        P2 = 4 - c*c
+        D = 2*P2 - S*S
+        w = D**0.5
+        a1 = (S + w)/2
+        b1 = S - a1
+        num = (32*a1**13*b1**11*c**7
+               + 64*a1**10*b1**6*c**10
+               + 128*a1**10*b1**4*c**4
+               + 32*a1**9*b1**14*c**9
+               + 456*a1**9*b1**5*c**4
+               + 64*a1**6*b1**9*c**12
+               + 128*a1**6*b1**7*c**6
+               + 456*a1**5*b1**8*c**6)
+        den = (4*a1**5*b1**7*c**3
+               + 8*a1**2*b1**2*c**6
+               - 57*a1*c
+               - 16*b1**2
+               - 57*b1*c
+               - 16*c**2
+               - 21.5)
+        return num/den
+
+    # pick many integer c-values avoiding singularities
+    xs = [i for i in range(-10, 11)]
+    ys = [evalF(float(x)) for x in xs]
+    # fit full‐degree polynomial
+    deg = len(xs) - 1
+    coeffs = np.polyfit(xs, ys, deg)
+
+    c = sp.symbols('c')
+    poly = sum(Fraction(coeffs[i]).limit_denominator() * c**(deg - i)
+               for i in range(len(coeffs)))
+    return sp.simplify(poly)
+
+```
+

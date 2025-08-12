@@ -1,0 +1,41 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+    a, b, c = sp.symbols('a b c')
+    N = (2*a**12*b**12*c**9 + 3*a**9*b**8*c**11 + 2*a**8*b**12*c**8 +
+         56*a**8*b**5*c**7 + 70*a**7*b**6*c**7 + 3*a**5*b**8*c**10 +
+         56*a**4*b**5*c**6 + 70*a**3*b**6*c**6)
+    D = (2*a**6*b**7*c**2 + 3*a**3*b**3*c**4 - 70*a*c -
+         56*b**2 - 70*b*c - 56*c**2 + 119)
+    G = sp.groebner([a + b + c - 1,
+                     a**2 + b**2 + c**2 - 4],
+                    a, b, c, order='lex')
+    # ansatz P(c) = k0 + k1*c + ... + k18*c^18
+    k = sp.symbols('k0:19')
+    P = sum(k[i]*c**i for i in range(19))
+    # compute remainder of N - D*P modulo the ideal
+    R = G.reduce(N - D*P)[1]
+    # collect conditions: all coefficients of monomials containing a or b must vanish
+    rem_poly = sp.Poly(R, a, b, c)
+    eqs = []
+    for (exp_a, exp_b, exp_c), coeff in rem_poly.terms():
+        if exp_a != 0 or exp_b != 0:
+            eqs.append(coeff)
+    sol = sp.solve(eqs, k, dict=True)
+    if not sol:
+        raise ValueError("No solution found")
+    sol = sol[0]
+    Psol = sum(sol[k[i]]*c**i for i in range(19))
+    return sp.expand(Psol)
+
+```
+

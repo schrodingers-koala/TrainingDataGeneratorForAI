@@ -1,0 +1,23 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+    a, b, c = sp.symbols('a b c')
+    num = 32*a**13*b**11*c**7 + 64*a**10*b**6*c**10 + 128*a**10*b**4*c**4 + 32*a**9*b**14*c**9 \
+          + 456*a**9*b**5*c**4 + 64*a**6*b**9*c**12 + 128*a**6*b**7*c**6 + 456*a**5*b**8*c**6
+    den = 4*a**5*b**7*c**3 + 8*a**2*b**2*c**6 - 57*a*c - 16*b**2 - 57*b*c - 16*c**2 - sp.Rational(43, 2)
+    F = sp.simplify(num/den)
+    G = sp.groebner([a + b + c - 1, a**2 + b**2 + c**2 - 4], a, b, c, order='lex')
+    rem = G.reduce(sp.simplify(F).as_numer_denom()[0])[1]
+    return sp.simplify(rem)
+
+```
+

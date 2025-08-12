@@ -1,0 +1,55 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    from sage.all import PolynomialRing, QQ, var
+
+    # declare variables
+    a, b, c = var('a b c')
+
+    # build a lex-order polynomial ring over the rationals
+    R = PolynomialRing(QQ, 'a,b,c', order='lex')
+    fa, fb, fc = R.gens()
+
+    # original numerator and denominator (with 701/2 kept as a rational)
+    f = R(12*fa**9*fb**6*fc**8
+          + 30*fa**8*fb**6*fc**9
+          + 600*fa**7*fb**2*fc**2
+          + 4*fa**6*fb**10*fc**13
+          + 198*fa**6*fb**3*fc**2
+          + 10*fa**5*fb**10*fc**14
+          + 200*fa**4*fb**6*fc**7
+          + 66*fa**3*fb**7*fc**7)
+
+    g = R(2*fa**4*fb**4*fc**6
+          + 5*fa**3*fb**4*fc**7
+          - 33*fa*fc
+          - 100*fb**2
+          - 33*fb*fc
+          - 100*fc**2
+          + QQ(701,2))
+
+    # define the ideal of constraints
+    I = R.ideal([fa + fb + fc - 1,
+                 fa**2 + fb**2 + fc**2 - 4])
+
+    # compute a Groebner basis (Singular backend via Sage is highly optimized)
+    G = I.groebner_basis()
+
+    # reduce f and g modulo the constraint ideal
+    f_red = f.reduce(G)[1]
+    g_red = g.reduce(G)[1]
+
+    # perform exact multivariate division to get the quotient polynomial
+    Q, _ = f_red.quo_rem(g_red)
+    return Q
+
+```
+

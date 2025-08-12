@@ -1,0 +1,2 @@
+Your answer is not collect. Please show me a corrent answer.
+Reason: Your solution is not a polynomial: (2*... - 38058152*c**15 - 58566892*c**14)/(... + 18240*b - 17344*c**3 - 34656)

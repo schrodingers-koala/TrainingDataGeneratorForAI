@@ -1,0 +1,127 @@
+Copilot said
+------------
+
+Practical Python Code for Rational Simplification under Constraint
+==================================================================
+
+Below are two streamlined methods to avoid the `ValueError` caused by passing NumPy’s `np.float64` objects into SymPy’s `nsimplify`.
+
+1. Converting NumPy Floats to Native Python Floats
+--------------------------------------------------
+
+python
+
+Copy
+
+```
+import numpy as np
+import sympy as sp
+
+# 1. Define symbols and original rational expression
+a, b, c = sp.symbols('a b c')
+num = (32*a**13*b**11*c**7
+       + 64*a**10*b**6*c**10
+       + 128*a**10*b**4*c**4
+       + 32*a**9*b**14*c**9
+       + 456*a**9*b**5*c**4
+       + 64*a**6*b**9*c**12
+       + 128*a**6*b**7*c**6
+       + 456*a**5*b**8*c**6)
+den = (4*a**5*b**7*c**3
+       + 8*a**2*b**2*c**6
+       - 57*a*c
+       - 16*b**2
+       - 57*b*c
+       - 16*c**2
+       - sp.Rational(43, 2))
+
+# 2. Sample real (a, b) pairs along the constraint a + b + c = 1, a(1 – a) = (c – 2)^2/7
+xs, ys = [], []
+for cv in np.linspace(-1.2, 1.8, 30):
+    D = 7 + 2*cv - 3*cv**2
+    if D < 0:
+        continue
+    w = np.sqrt(D)
+    a1 = (1 - cv + w)/2
+    b1 = 1 - cv - a1
+    dv = float(den.subs({a: a1, b: b1, c: cv}))
+    if abs(dv) < 1e-6:
+        continue
+    fv = float(num.subs({a: a1, b: b1, c: cv}) / den.subs({a: a1, b: b1, c: cv}))
+    xs.append(cv)
+    ys.append(fv)
+    if len(xs) >= 8:
+        break
+
+# 3. Fit polynomial and expand with pure Python floats
+coeffs = np.polyfit(xs, ys, len(xs)-1)
+
+# convert to Python floats before passing into SymPy
+coeffs = [float(c_) for c_ in coeffs]
+
+c_sym = sp.symbols('c')
+poly = sum(
+    sp.nsimplify(coeffs[i], tol=1e-8) * c_sym**(len(coeffs)-1-i)
+    for i in range(len(coeffs))
+)
+poly = sp.expand(poly)
+
+print(poly)
+
+```
+
+2. Alternative: Use SymPy’s `interpolate`
+-----------------------------------------
+
+python
+
+Copy
+
+```
+import numpy as np
+import sympy as sp
+
+# 1. Define symbols and original expression (same as above)
+a, b, c = sp.symbols('a b c')
+# num, den definitions omitted for brevity…
+
+# 2. Sample points exactly as before
+points = []
+for cv in np.linspace(-1.2, 1.8, 30):
+    D = 7 + 2*cv - 3*cv**2
+    if D < 0:
+        continue
+    w = np.sqrt(D)
+    a1 = (1 - cv + w)/2
+    b1 = 1 - cv - a1
+    dv = float(den.subs({a: a1, b: b1, c: cv}))
+    if abs(dv) < 1e-6:
+        continue
+    fv = float(num.subs({a: a1, b: b1, c: cv}) / dv)
+    points.append((cv, fv))
+    if len(points) >= 8:
+        break
+
+# 3. Interpolate and clean up
+poly_approx = sp.interpolate(points, c)
+poly_exact  = sp.nsimplify(poly_approx, tol=1e-8)
+poly_final  = sp.expand(poly_exact)
+
+print(poly_final)
+
+```
+
+Why These Changes Work
+----------------------
+
+* Converting `np.float64` into **native Python floats** prevents SymPy from seeing strings like `"np.float64(...)"`.
+* SymPy’s built-in `interpolate` bypasses `polyfit` altogether and builds the polynomial directly from sample points.
+
+Ready to push further? We can
+
+* Increase sampling density or degree check
+* Switch to exact rational or algebraic sampling (using `Rational` or algebraic numbers)
+* Leverage SMT/Groebner backends for an entirely symbolic derivation
+
+Let me know which direction you’d like next!
+

@@ -1,0 +1,105 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+import sympy as sp
+
+# 1. Declare symbols (including t for the target expression)
+a, b, c, t = sp.symbols('a b c t')
+
+# 2. Build numerator and denominator of the original rational function
+num = (
+    32*a**13*b**11*c**7
+  + 64*a**10*b**6*c**10
+  + 128*a**10*b**4*c**4
+  + 32*a**9*b**14*c**9
+  + 456*a**9*b**5*c**4
+  + 64*a**6*b**9*c**12
+  + 128*a**6*b**7*c**6
+  + 456*a**5*b**8*c**6
+)
+den = (
+    4*a**5*b**7*c**3
+  + 8*a**2*b**2*c**6
+  - 57*a*c
+  - 16*b**2
+  - 57*b*c
+  - 16*c**2
+  - sp.Rational(43, 2)
+)
+
+# 3. Constraint‐polynomials:
+#    F1:  num - t·den = 0   (t replaces the rational function)
+#    F2:  a + b + c - 1 = 0
+#    F3:  7·a·(1 - a) - (c - 2)**2 = 0
+F1 = num - t*den
+F2 = a + b + c - 1
+F3 = 7*a*(1 - a) - (c - 2)**2
+
+# 4. Compute a lex‐order Groebner basis eliminating a,b first
+G = sp.groebner([F1, F2, F3], a, b, t, c, order='lex')
+
+# 5. Extract the elimination polynomial(s) in {t, c} only
+elim_polys = [
+    poly.as_expr()
+    for poly in G.polys
+    if not (poly.free_symbols & {a, b})
+]
+
+# sanity check: there should be at least one polynomial involving t
+elim_polys = [p for p in elim_polys if p.free_symbols & {t}]
+if not elim_polys:
+    raise RuntimeError("No elimination polynomial in t found!")
+
+elim = elim_polys[0]  # typically the first such poly
+
+# 6. Solve that polynomial for t
+#    This handles any degree in t, picking the branch you need
+solutions_for_t = sp.solve(elim, t)
+
+# If the elimination polynomial is linear in t, you'll get a single solution
+# Otherwise you'll get multiple branches—pick the appropriate one.
+P_c = sp.simplify(solutions_for_t[0])
+
+# 7. Inspect the result
+poly_Pc = sp.Poly(P_c, c)
+print("Polynomial in c:", P_c)
+print("Degree:", poly_Pc.degree())
+print("Coefficients (highest→lowest):", poly_Pc.all_coeffs())
+
+```
+
+Explanation of the fix:
+
+* We no longer assume the elimination polynomial is *exactly* degree 1 in `t`. Instead, we use `sp.solve(elim, t)`, which works for any degree and returns the correct algebraic solution(s).
+* We filter the Groebner basis for polynomials free of `a` and `b` but still involving `t`, then solve that for `t`.
+* This approach sidesteps unpacking errors entirely and automatically handles whichever degree the elimination polynomial has.
+
+Next steps you might explore:
+
+* If you get multiple branches in `solutions_for_t`, identify which corresponds to your original real‐branch constraint (e.g. by checking numeric values at a sample `c`).
+* Factor `P_c` over the rationals with `sp.factor(P_c)`.
+* Verify numerically for random admissible `c`:
+
+  python
+
+  Copy
+
+  ```
+  import random
+  cv = random.uniform(-1,2)
+  # compute a,b by the real‐root branch:
+  D = 7 + 2*cv - 3*cv**2
+  w = D**0.5
+  a1 = (1 - cv + w)/2
+  b1 = 1 - cv - a1
+  original = num.subs({a:a1,b:b1,c:cv})/den.subs({a:a1,b:b1,c:cv})
+  polyval  = P_c.subs(c, cv)
+  assert abs(float(original - polyval)) < 1e-6
+
+  ```
+

@@ -1,0 +1,98 @@
+Copilot said
+------------
+
+Splitting Numerator and Denominator with `as_numer_denom`
+=========================================================
+
+The error `'frac' object is not subscriptable` arises because `sp.frac` returns a single object, not a tuple. Instead, use SymPy’s built-in method `as_numer_denom()` to get the numerator and denominator separately. Here’s a self-contained script:
+
+python
+
+Copy
+
+```
+import sympy as sp
+
+# 1. Declare symbols and build the rational expression
+a, b, c = sp.symbols('a b c')
+num = (
+    32*a**13*b**11*c**7
+    + 64*a**10*b**6*c**10
+    + 128*a**10*b**4*c**4
+    + 32*a**9*b**14*c**9
+    + 456*a**9*b**5*c**4
+    + 64*a**6*b**9*c**12
+    + 128*a**6*b**7*c**6
+    + 456*a**5*b**8*c**6
+)
+den = (
+    4*a**5*b**7*c**3
+    + 8*a**2*b**2*c**6
+    - 57*a*c
+    - 16*b**2
+    - 57*b*c
+    - 16*c**2
+    - sp.Rational(43, 2)
+)
+expr = num/den
+
+# 2. Constraints: a + b + c = 1, a*(1 − a) = (c − 2)**2/7
+D     = 7 + 2*c - 3*c**2
+sqrtD = sp.sqrt(D)
+a1    = (1 - c + sqrtD)/2
+b1    = 1 - c - a1
+
+# 3. Substitute one branch, clear radicals, and simplify
+subs_expr = expr.subs({a: a1, b: b1})
+rad_free  = sp.radsimp(subs_expr)         # eliminate √D
+simp_expr = sp.simplify(rad_free)        # clean up
+
+# 4. Extract numerator and denominator
+num_c, den_c = simp_expr.as_numer_denom() 
+
+# 5. Expand the numerator to get a pure polynomial in c
+poly_c = sp.expand(num_c)
+
+# 6. Build Poly object for degree/coeffs inspection
+P = sp.Poly(poly_c, c)
+
+print("Denominator after radical‐clear:", den_c)   # should be 1
+print("Polynomial in c:", poly_c)
+print("Degree:", P.degree())
+print("Coefficients (high→low):", P.all_coeffs())
+
+```
+
+### Why This Fixes the Error
+
+* `simp_expr.as_numer_denom()` returns a tuple `(numerator, denominator)`, so there’s no indexing error.
+* After `radsimp` and `simplify`, the denominator typically collapses to 1, leaving the numerator as the desired polynomial.
+* Expanding that numerator yields a straightforward `Poly` in `c`.
+
+### Next Steps
+
+* Repeat substitution with the **second** branch
+
+  python
+
+  Copy
+
+  ```
+  a2 = (1 - c - sqrtD)/2
+  b2 = 1 - c - a2
+
+  ```
+
+  and confirm you get the **same** `poly_c`.
+* Factor it using `sp.factor(poly_c)` to inspect irreducible factors.
+* Sample random admissible `c` values to numerically verify
+
+  python
+
+  Copy
+
+  ```
+  float(expr.subs({a: a1.subs(c, 0.5), b: b1.subs(c, 0.5), c: 0.5})) == float(poly_c.subs(c, 0.5))
+
+  ```
+

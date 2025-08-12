@@ -1,0 +1,2 @@
+Your answer is not collect. Please show me a corrent answer.
+Reason: Your solution is not a polynomial: ... - 2745840*c**4/(... - 12800*b - 17024*c + 25664)

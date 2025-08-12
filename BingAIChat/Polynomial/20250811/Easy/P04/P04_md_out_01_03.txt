@@ -1,0 +1,50 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+
+    # declare symbols
+    a, b, c, t = sp.symbols('a b c t')
+
+    # numerator and denominator
+    num = (8*a**11*b**13*c**6
+           + 5*a**10*b**11*c**9
+           + 32*a**7*b**11*c**8
+           + 664*a**7*b**6*c**4
+           + 20*a**6*b**9*c**11
+           + 464*a**6*b**7*c**4
+           + 415*a**6*b**4*c**7
+           + 290*a**5*b**5*c**7)
+    den = (a**6*b**7*c**2
+           + 4*a**2*b**5*c**4
+           - 58*a*c
+           - 83*b**2
+           - 58*b*c
+           - 83*c**2
+           + 245)
+
+    # constraints
+    f1 = a + b + c - 1
+    f2 = a**2 + b**2 + c**2 - 4
+
+    # build Groebner basis with lex order eliminating a,b,c first
+    G = sp.groebner([f1, f2, num - t*den], a, b, c, t,
+                    order='lex', domain='QQ[t]')
+
+    # eliminate a,b,c to get a univariate polynomial in t
+    poly_t = G.eliminate(a, b, c)[0]
+
+    # solve for t and return the single solution
+    sol = sp.solve(poly_t, t)
+    return sol[0]
+
+```
+

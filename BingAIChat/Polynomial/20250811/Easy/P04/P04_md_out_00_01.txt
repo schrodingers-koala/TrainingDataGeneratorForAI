@@ -1,0 +1,35 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+import sympy as sp
+
+# define symbols
+a, b, c = sp.symbols('a b c')
+
+# numerator and denominator
+num = (8*a**11*b**13*c**6 + 5*a**10*b**11*c**9 + 32*a**7*b**11*c**8
+       + 664*a**7*b**6*c**4 + 20*a**6*b**9*c**11 + 464*a**6*b**7*c**4
+       + 415*a**6*b**4*c**7 + 290*a**5*b**5*c**7)
+den = (a**6*b**7*c**2 + 4*a**2*b**5*c**4 - 58*a*c - 83*b**2
+       - 58*b*c - 83*c**2 + 245)
+
+# pick a sample point on the curve a+b+c=1, a^2+b^2+c^2=4
+t = sp.Rational(3, 2)
+disc = 4 - t**2 - (1 - t)**2
+b_val = sp.sqrt(disc)
+c_val = 1 - t - b_val
+
+# evaluate and simplify
+r = num.subs({a: t, b: b_val, c: c_val}) / den.subs({a: t, b: b_val, c: c_val})
+poly = sp.nsimplify(r)
+
+solve_flag = 1
+poly = poly
+
+```
+

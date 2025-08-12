@@ -5,6 +5,8 @@ Notebooks for prototyping of training data generation.
 ## Contents
 
 - [MATH: Linear Algebra Data Generator](LinAlgDataGenerator.ipynb)
+- [MATH: Polynomial Data Generator](PolynomialDataGenerator.ipynb)
+  - [AI Solution Analysis of Polynomial Problem](AI_Solution_Analysis_Poly.md)
 
 ## Example
 

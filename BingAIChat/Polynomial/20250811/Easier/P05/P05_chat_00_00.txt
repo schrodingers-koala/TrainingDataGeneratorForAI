@@ -1,0 +1,7 @@
+
+Simplify (440*a^9*b^8*c^6 + 115*a^8*b^9*c^6 - 25*a^7*b^8*c^6 + 440*a^5*b^3*c^7 + 115*a^4*b^4*c^7 - 25*a^3*b^3*c^7)/(-23*a*c - 88*b^2 - 23*b*c - 88*c^2 + 625/2), where a + b + c - 1 = 0, a^2 + b^2 + c^2 - 4 = 0. Please solve the problem and express it with a polynomial.
+For verification of your answer, give me your solution as an python code.
+If you can solve the problem, add "solve_flag = 1" and add "poly=<your solution polynomial>" to the python code.
+Do not add any other code to the python code.
+If you cannot solve the problem, add "solve_flag = 2",
+and solve_problem() function to the python code for solving the problem and returning your solution polynomial by python.

@@ -1,0 +1,55 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+    a, b, c = sp.symbols('a b c')
+    N = (2*a**12*b**12*c**9 +
+         3*a**9*b**8*c**11 +
+         2*a**8*b**12*c**8 +
+         56*a**8*b**5*c**7 +
+         70*a**7*b**6*c**7 +
+         3*a**5*b**8*c**10 +
+         56*a**4*b**5*c**6 +
+         70*a**3*b**6*c**6)
+    D = (2*a**6*b**7*c**2 +
+         3*a**3*b**3*c**4 -
+         70*a*c -
+         56*b**2 -
+         70*b*c -
+         56*c**2 +
+         119)
+    # sample several values of c, solve for (a,b), compute the ratio, then interpolate
+    data = []
+    for cv in range(-3, 8):
+        cv = sp.Rational(cv, 1)
+        S = 1 - cv
+        T = (2*cv**2 - 2*cv - 3)/2
+        sols = sp.solve([a + b - S, a*b - T], [a, b])
+        for sol in sols:
+            av = sol[a]
+            bv = sol[b]
+            denom = D.subs({a: av, b: bv, c: cv})
+            if denom == 0:
+                continue
+            val = sp.simplify(N.subs({a: av, b: bv, c: cv})/denom)
+            data.append((cv, val))
+    # build a dict of consistent values
+    mapping = {}
+    for cv, val in data:
+        if cv in mapping and mapping[cv] != val:
+            continue
+        mapping[cv] = val
+    points = sorted(mapping.items(), key=lambda x: x[0])
+    poly = sp.interpolate(points, c)
+    return sp.simplify(poly)
+
+```
+

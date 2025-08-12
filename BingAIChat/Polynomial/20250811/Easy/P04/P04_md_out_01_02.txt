@@ -1,0 +1,58 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+
+    # primary symbols
+    a, b, t = sp.symbols('a b t')
+    # eliminate c via a + b + c - 1 = 0
+    c = 1 - a - b
+
+    # numerator and denominator after substituting c = 1 - a - b
+    num = (
+        8*a**11*b**13*c**6
+        + 5*a**10*b**11*c**9
+        + 32*a**7*b**11*c**8
+        + 664*a**7*b**6*c**4
+        + 20*a**6*b**9*c**11
+        + 464*a**6*b**7*c**4
+        + 415*a**6*b**4*c**7
+        + 290*a**5*b**5*c**7
+    )
+    den = (
+        a**6*b**7*c**2
+        + 4*a**2*b**5*c**4
+        - 58*a*c
+        - 83*b**2
+        - 58*b*c
+        - 83*c**2
+        + 245
+    )
+
+    # second constraint becomes 2*a^2 + 2*b^2 + 2*a*b - 2*a - 2*b - 3 = 0
+    f = 2*a**2 + 2*b**2 + 2*a*b - 2*a - 2*b - 3
+
+    # compute Groebner basis in (a,b)
+    G = sp.groebner([f], a, b, order='lex')
+
+    # form num - t*den and reduce mod <f>
+    expr = num - t*den
+    rem = G.reduce(expr)[1]
+
+    # rem = coeff_t(a,b)*t + coeff_const(a,b)
+    coeff_t, coeff_const = sp.Poly(rem, t).all_coeffs()
+
+    # solve for t
+    sol = sp.simplify(-coeff_const/coeff_t)
+    return sol
+
+```
+

@@ -1,0 +1,2 @@
+Your answer is not collect. Please show me a corrent answer.
+Reason: Your solution is not a polynomial: 3*c*(2*... - 321604*c**4 - 29889)/(32*(... + 82*b - 156*c**2 + 31))

@@ -1,0 +1,26 @@
+Copilot said
+------------
+
+python
+
+Copy
+
+```
+solve_flag = 2
+
+def solve_problem():
+    import sympy as sp
+    from sympy.polys.domains import QQ
+    a, b, c = sp.symbols('a b c')
+    N = 440*a**9*b**8*c**6 + 115*a**8*b**9*c**6 - 25*a**7*b**8*c**6 \
+        + 440*a**5*b**3*c**7 + 115*a**4*b**4*c**7 - 25*a**3*b**3*c**7
+    D = -23*a*c - 88*b**2 - 23*b*c - 88*c**2 + sp.Rational(625, 2)
+    f1 = a + b + c - 1
+    f2 = a**2 + b**2 + c**2 - 4
+    G = sp.groebner([f1, f2], a, b, c, order='lex', domain=QQ)
+    Nr = G.reduce(N)[1]
+    Dr = G.reduce(D)[1]
+    return sp.simplify(Nr/Dr)
+
+```
+
